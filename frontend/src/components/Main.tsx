@@ -12,7 +12,8 @@ function Main() {
     useEffect( () => {
             if(searchTerm)    
             fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
-              }, [searchTerm]);
+              }, [searchTerm]); 
+              console.log('alex');
 
     const handleSubmitForm = (searchTerm: string) => {
         // console.log(location);
