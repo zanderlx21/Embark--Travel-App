@@ -2,9 +2,9 @@ import { useState, useEffect, FormEvent } from 'react'
 import { Business } from '../models/YelpModel';
 import { fetchBusinesses } from '../services/YelpAPIService';
         
-interface Prop {
-    onSubmit: (searchTerm: string) => void;
-}
+// interface Prop {
+//     onSubmit: (searchTerm: string) => void;
+// }
         
 function SearchForm({onSubmit}: Prop) {
     const[ businessList, setBusinessList ] = useState<Business[]>([])
@@ -13,10 +13,9 @@ function SearchForm({onSubmit}: Prop) {
 useEffect( () => {
         fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
       }, [searchTerm]);
-
+  
       function onFormSubmit (e: FormEvent) {
         e.preventDefault();
-        console.log('Alex')
         onSubmit(searchTerm);
     }
 
