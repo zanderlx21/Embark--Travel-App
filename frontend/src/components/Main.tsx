@@ -13,7 +13,6 @@ function Main() {
             if(searchTerm)    
             fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
               }, [searchTerm]); 
-              console.log('alex');
 
     const handleSubmitForm = (searchTerm: string) => {
         // console.log(location);

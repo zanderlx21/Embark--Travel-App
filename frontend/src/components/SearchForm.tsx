@@ -10,11 +10,7 @@ function SearchForm({onSubmit}: Prop) {
     const[ businessList, setBusinessList ] = useState<Business[]>([])
     const [searchTerm, setSearchTerm] = useState<string>("");
   
-// useEffect( () => {
-//     if(searchTerm)    
-//     fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
-//       }, [searchTerm]);
-  
+
       function onFormSubmit (e: FormEvent) {
         e.preventDefault();
         console.log(searchTerm);
@@ -26,7 +22,7 @@ function SearchForm({onSubmit}: Prop) {
         <div className="Form-Container">
             <div className="Form-Div">
             <form onSubmit={onFormSubmit}>
-                <input type="text" id="Search-Bar" placeholder="Where do you want to go?" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value) } ></input>
+                <input type="text" id="Search-Bar" placeholder="Where do you want to go?" onChange={(e) => setSearchTerm(e.target.value)} ></input>
                 <button type="submit" id="Search-Button">Search</button>
             </form>
             </div>
