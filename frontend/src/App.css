@@ -1,0 +1,59 @@
+.Form-Container {
+    height: 500px;
+    width: 75%;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 2px solid red */
+}
+
+.Form-Div {
+display: flex;
+justify-content: center;
+align-items: center;
+
+background-color: rgb(201, 139, 139);
+height: 100px;
+width: 100%;
+}
+
+form {
+    width: 80%;
+}
+
+
+.Local-Options-Container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Local {
+    color: white;
+    background-color: #4564ca;
+    height: 150px;
+    width: 164px;
+    margin: 10px;
+    text-align: center;
+}
+
+#Search-Bar {
+    height: 35px;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+}
+
+#Search-Button {
+    Width:80px;
+    height: 36px;
+    margin-left: 15px;
+    border-radius: 5px;
+    border: none;
+}
