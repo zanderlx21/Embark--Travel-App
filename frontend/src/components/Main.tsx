@@ -4,17 +4,16 @@ import LocalOptions from './LocalOptions'
 
 function Main() {
     const [location, setLocation] = useState("")
-    const [search, setSearch] = useState<string>("")
+    const [searchTerm, setSearchTerm] = useState<string>("");
 
     const handleSubmitForm = (searchTerm: string) => {
-        console.log(location);
-        setSearch(searchTerm)
+        // console.log(location);
+        setSearchTerm(searchTerm)
     }
 
     return (
         <div>
-            <SearchForm /> 
-            {/* onSubmit={handleSubmitForm} */}
+            <SearchForm onSubmit={handleSubmitForm} /> 
         </div>
     )
 }
