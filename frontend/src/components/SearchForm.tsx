@@ -10,14 +10,12 @@ function SearchForm({onSubmit}: Prop) {
     const[ businessList, setBusinessList ] = useState<Business[]>([])
     const [searchTerm, setSearchTerm] = useState<string>("");
   
-useEffect( () => {
-    if (searchTerm) 
-        fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
-      }, [searchTerm]);
-    
+
       function onFormSubmit (e: FormEvent) {
         e.preventDefault();
+        console.log(searchTerm);
         onSubmit(searchTerm);
+        
     }
 
     return (
