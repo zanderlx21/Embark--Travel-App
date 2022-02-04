@@ -2,30 +2,31 @@ import { useState, useEffect, FormEvent } from 'react'
 import { Business } from '../models/YelpModel';
 import { fetchBusinesses } from '../services/YelpAPIService';
         
-// interface Prop {
-//     onSubmit: (searchTerm: string) => void;
-// }
+interface Prop {
+    onSubmit: (searchTerm: string) => void;
+}
         
 function SearchForm({onSubmit}: Prop) {
     const[ businessList, setBusinessList ] = useState<Business[]>([])
     const [searchTerm, setSearchTerm] = useState<string>("");
   
-useEffect( () => {
-        fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
-      }, [searchTerm]);
+// useEffect( () => {
+//     if(searchTerm)    
+//     fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
+//       }, [searchTerm]);
   
       function onFormSubmit (e: FormEvent) {
         e.preventDefault();
+        console.log(searchTerm);
         onSubmit(searchTerm);
+        
     }
-
-console.log(fetchBusinesses("Phoenix"));
 
     return (
         <div className="Form-Container">
             <div className="Form-Div">
             <form onSubmit={onFormSubmit}>
-                <input type="text" id="Search-Bar" placeholder="Where do you want to go?" onChange={(e) => setSearchTerm(e.target.value) } ></input>
+                <input type="text" id="Search-Bar" placeholder="Where do you want to go?" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value) } ></input>
                 <button type="submit" id="Search-Button">Search</button>
             </form>
             </div>
