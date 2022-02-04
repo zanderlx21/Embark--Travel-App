@@ -1,13 +1,22 @@
-import React, { FormEvent, useEffect, useState } from 'react'
-
-
+import { useState, useEffect } from 'react'
+import { Business } from '../models/YelpModel';
+import { fetchBusinesses } from '../services/YelpAPIService';
+        
 interface Prop {
     onSubmit: (searchTerm: string) => void;
 }
+        
+function SearchForm() {
 
-function SearchForm({onSubmit}: Prop) {
+    const[ businessList, setBusinessList ] = useState<Business[]>([])
+    const [searchTerm, setSearchTerm] = useState<string>("");
+  
+useEffect( () => {
+        fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
+      }, [searchTerm]);
 
-    }
+console.log(fetchBusinesses("Phoenix"));
+
     return (
         <div className="Form-Container">
             <div className="Form-Div" >

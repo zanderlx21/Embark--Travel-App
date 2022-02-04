@@ -6,10 +6,6 @@ function Main() {
     const [location, setLocation] = useState("")
     const [search, setSearch] = useState<string>("")
 
-    // useEffect(() => {
-    //     fetchAllData(search).then(data => setRecipes(data));
-    // },[search])
-
     const handleSubmitForm = (searchTerm: string) => {
         console.log(location);
         setSearch(searchTerm)
@@ -18,7 +14,6 @@ function Main() {
     return (
         <div>
             <SearchForm onSubmit={handleSubmitForm}/>
-
         </div>
     )
 }
