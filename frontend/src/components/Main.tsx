@@ -13,7 +13,8 @@ function Main() {
 
     return (
         <div>
-            <SearchForm onSubmit={handleSubmitForm}/>
+            <SearchForm /> 
+            {/* onSubmit={handleSubmitForm} */}
         </div>
     )
 }
