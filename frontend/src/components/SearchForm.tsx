@@ -16,6 +16,7 @@ useEffect( () => {
 
       function onFormSubmit (e: FormEvent) {
         e.preventDefault();
+        console.log('Alex')
         onSubmit(searchTerm);
     }
 
