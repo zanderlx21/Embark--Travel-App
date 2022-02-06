@@ -3,14 +3,34 @@ import { Business } from "../models/YelpModel";
 
 const yelpKey = process.env.REACT_APP_YELP_API_KEY;
 
-const yelpBaseUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search";
-
-export function fetchBusinesses(query:string): Promise<Business[]> {
-  return axios
-  .get<Business[]>(yelpBaseUrl, {
-    params: { location: query },
-    headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
-  })
-  .then( res => res.data )
+const yelpBaseUrl = "http://localhost:5001/travelapp-f2d81/us-central1/api/search";
+export const fetchBusinesses = async (query: string) => {
+const response = await fetch(yelpBaseUrl);
+const json = await response.json();
+console.log(json);
 }
+
+
+
+
+
+
+//"https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses"
+
+// export function fetchBusinesses(query:string): Promise<Business[]> {
+  //for consoling logging purposes:
+  //  axios
+  // .get<Business[]>(yelpBaseUrl, {
+  //   params: { location: query },
+  //   headers: { 'Authorization': `Bearer ${yelpKey}` }
+  // })
+  // .then( res => console.log(res.data) )
+  
+//   return axios
+//   .get<Business[]>(("/search"), {
+//     params: { location: query },
+//     headers: { 'Authorization': `Bearer ${yelpKey}` }
+//   })
+//   .then( res => res.data )
+// }
 

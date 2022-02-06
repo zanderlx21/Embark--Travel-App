@@ -1,6 +1,5 @@
 import { useState, useEffect, FormEvent } from 'react'
 import { Business } from '../models/YelpModel';
-import { fetchBusinesses } from '../services/YelpAPIService';
         
 interface Prop {
     onSubmit: (searchTerm: string) => void;
@@ -10,12 +9,10 @@ function SearchForm({onSubmit}: Prop) {
     const[ businessList, setBusinessList ] = useState<Business[]>([])
     const [searchTerm, setSearchTerm] = useState<string>("");
   
-
       function onFormSubmit (e: FormEvent) {
         e.preventDefault();
         console.log(searchTerm);
         onSubmit(searchTerm);
-        
     }
 
     return (
