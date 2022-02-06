@@ -2,7 +2,7 @@ import express from 'express';
 // import { getClient } from '../db';
 import fetch from 'node-fetch';
 
-const yelpRoutes = express.Router(); 
+export const yelpRoutes = express.Router(); 
 
 yelpRoutes.get("/search", async (req, res) => {
 //     try {
