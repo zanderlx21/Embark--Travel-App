@@ -16,7 +16,6 @@ function Main() {
             
 
     const handleSubmitForm = (searchTerm: string) => {
-        // console.log(location);
         setSearchTerm(searchTerm)
     }
 
