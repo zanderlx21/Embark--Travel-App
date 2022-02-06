@@ -8,14 +8,15 @@ yelpRoutes.get("/", async (req, res) => {
 
     // const location = req.query.search
     // console.log(location);
+    // const yelpKey = process.env.REACT_APP_YELP_API_KEY;
 
     try {
-        const api_url = 'https://api.yelp.com/v3/businesses/search';
+        const api_url = 'https://api.yelp.com/v3/businesses/search?location=';
 
-        let location: string = req.query.location as string;
+        let location: string = req.query.body as string;
         console.log(location);
 
-        const fetch_response = await fetch(api_url +location, {
+        const fetch_response = await fetch(api_url + location, {
             headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
             });
         const json = await fetch_response.json();
