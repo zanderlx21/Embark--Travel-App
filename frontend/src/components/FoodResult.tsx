@@ -1,7 +1,7 @@
 import { fetchBusinesses } from "../services/YelpAPIService";
 import { MainProp } from "./Main";
 
-function SearchResults() {
+function FoodResult() {
     return (
         <div>
             
@@ -9,4 +9,4 @@ function SearchResults() {
     )
 }
 
-export default SearchResults
+export default FoodResult;
