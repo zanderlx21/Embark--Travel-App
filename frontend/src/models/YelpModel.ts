@@ -4,14 +4,14 @@ export interface YelpModel {
 }
 
 export interface Business {
-    name: string,
-    url: string, 
-    review_count: number,
-    rating: number,
-    price: string,
-    is_closed: boolean,
-    location: [
-        {display_address: string}
-    ]
-    display_phone: string
+        name: string,
+        url: string, 
+        review_count: number,
+        rating: number,
+        price: string,
+        is_closed: boolean,
+        location: [
+            {display_address: string}
+        ]
+        display_phone: string
 }

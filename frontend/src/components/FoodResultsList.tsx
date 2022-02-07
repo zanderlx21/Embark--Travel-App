@@ -1,11 +1,17 @@
 import React from 'react'
+import { FoodResult } from './FoodResult';
+import { Business } from '../models/YelpModel';
 
-function FoodListResults() {
+export interface MainProp {
+    businesses: Business[];
+}
+
+function FoodResultsList({businesses}:MainProp) {
     return (
         <div>
-            
+        {businesses.map( (business, i) => <FoodResult key={i} business={business}/>)}
         </div>
     )
 }
 
-export default FoodListResults;
+export default FoodResultsList;
