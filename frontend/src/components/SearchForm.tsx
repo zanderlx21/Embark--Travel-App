@@ -17,18 +17,13 @@ function SearchForm({onSubmit}: Prop) {
 
     return (
         <div className="Form-Container">
+            <video></video>
             <div className="Form-Div">
-            <form onSubmit={onFormSubmit}>
-                <input type="text" name="location" id="Search-Bar" placeholder="Where do you want to go?" onChange={(e) => setSearchTerm(e.target.value)} ></input>
-                <button type="submit" id="Search-Button">Search</button>
+                <form onSubmit={onFormSubmit}>
+                    <input type="text" name="location" id="Search-Bar" placeholder="Where do you want to go?" onChange={(e) => setSearchTerm(e.target.value)} ></input>
+                    <button type="submit" id="Search-Button">Search</button>
             </form>
             </div>
-            <div className="Local-Options-Container">
-                    <div className='Local Food'><img ></img><p>Food</p></div>
-                    <div className='Local Stay'><img></img><p>Hotels</p></div>
-                    <div className='Local Recreation'><img ></img><p>Recreation</p></div>
-                    <div className='Local Other'><img></img><p>More!</p></div>
-                </div>
         </div>
     )
 }
