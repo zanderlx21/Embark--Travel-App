@@ -6,14 +6,10 @@ export const yelpRoutes = express.Router();
 
 yelpRoutes.get("/", async (req, res) => {
 
-    // const location = req.query.search
-    // console.log(location);
-    // const yelpKey = process.env.REACT_APP_YELP_API_KEY;
-
     try {
         const api_url = 'https://api.yelp.com/v3/businesses/search?location=';
 
-        let location: string = req.query.body as string;
+        let location: string = req.query.location as string;
         console.log(location);
 
         const fetch_response = await fetch(api_url + location, {

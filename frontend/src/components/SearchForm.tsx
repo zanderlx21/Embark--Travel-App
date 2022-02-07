@@ -18,8 +18,8 @@ function SearchForm({onSubmit}: Prop) {
     return (
         <div className="Form-Container">
             <div className="Form-Div">
-            <form onSubmit={onFormSubmit} method="get">
-                <input type="text" id="Search-Bar" placeholder="Where do you want to go?" onChange={(e) => setSearchTerm(e.target.value)} ></input>
+            <form action="/" method="GET" onSubmit={onFormSubmit}>
+                <input type="text" id="Search-Bar" name="search" placeholder="Where do you want to go?" onChange={(e) => setSearchTerm(e.target.value)} ></input>
                 <button type="submit" id="Search-Button">Search</button>
             </form>
             </div>
