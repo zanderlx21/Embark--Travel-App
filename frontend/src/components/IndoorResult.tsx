@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchResults() {
+function IndoorResult() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function SearchResults() {
     )
 }
 
-export default SearchResults
+export default IndoorResult;
