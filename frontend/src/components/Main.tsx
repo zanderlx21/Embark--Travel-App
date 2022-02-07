@@ -3,16 +3,12 @@ import SearchForm from './SearchForm'
 import LocalOptions from './LocalOptions'
 import { fetchBusinesses } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
-
-export interface MainProp {
-    business: Business[];
-}
+import FoodResultsList from './FoodResultsList';
 
 function Main() {
     const [location, setLocation] = useState("")
     const [searchTerm, setSearchTerm] = useState<string>("");
     const[ businessList, setBusinessList ] = useState<Business[]>([])
-    const [ business, setBusiness ] = useState<Business[]>([]);
 
     useEffect( () => {
             if(searchTerm)  
@@ -27,6 +23,7 @@ function Main() {
         <div>
             <SearchForm onSubmit={handleSubmitForm} /> 
 
+            <FoodResultsList businesses={businessList} />
         </div>
     )
 }

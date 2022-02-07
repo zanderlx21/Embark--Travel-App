@@ -1,12 +1,15 @@
-import { fetchBusinesses } from "../services/YelpAPIService";
-import { MainProp } from "./Main";
+import { Business } from "../models/YelpModel"
 
-function FoodResult() {
+interface Prop {
+    business: Business,
+}
+
+export function FoodResult({business}:Prop) {
     return (
-        <div>
-            
+        <div className="Result">
+            <p>{business.name}</p>
+            <div className="image"><img src={business.url} alt="" /></div>
+            <p className="rating">{business.rating}</p>
         </div>
     )
 }
-
-export default FoodResult;

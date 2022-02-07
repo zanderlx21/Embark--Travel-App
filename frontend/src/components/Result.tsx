@@ -1,10 +1,10 @@
+import { Business } from "../models/YelpModel"
 
-function Result() {
+
+export function Result() {
     return (
-        <div>
-            
+        <div className="Result">
+
         </div>
     )
 }
-
-export default Result
