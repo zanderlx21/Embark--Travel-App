@@ -4,13 +4,13 @@ import fetch from 'node-fetch';
 
 export const yelpRoutes = express.Router(); 
 
-yelpRoutes.get("/", async (req, res) => {
+yelpRoutes.get("/search", async (req, res) => {
+    console.log("/search");
 
     try {
         const api_url = 'https://api.yelp.com/v3/businesses/search?location=';
 
         let location: string = req.query.location as string;
-        console.log(location);
 
         const fetch_response = await fetch(api_url + location, {
             headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
