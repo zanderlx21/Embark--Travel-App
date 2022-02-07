@@ -1,4 +1,5 @@
-import React from 'react'
+import { fetchBusinesses } from "../services/YelpAPIService";
+import { MainProp } from "./Main";
 
 function SearchResults() {
     return (

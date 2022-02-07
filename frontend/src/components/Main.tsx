@@ -4,17 +4,21 @@ import LocalOptions from './LocalOptions'
 import { fetchBusinesses } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
 
+export interface MainProp {
+    business: Business[];
+}
+
 function Main() {
     const [location, setLocation] = useState("")
     const [searchTerm, setSearchTerm] = useState<string>("");
     const[ businessList, setBusinessList ] = useState<Business[]>([])
+    const [ business, setBusiness ] = useState<Business[]>([]);
 
     useEffect( () => {
             if(searchTerm)  
             fetchBusinesses(searchTerm).then((response) => setBusinessList(businessList));
               }, [searchTerm]); 
             
-
     const handleSubmitForm = (searchTerm: string) => {
         setSearchTerm(searchTerm)
     }
@@ -22,6 +26,7 @@ function Main() {
     return (
         <div>
             <SearchForm onSubmit={handleSubmitForm} /> 
+
         </div>
     )
 }
