@@ -189,14 +189,25 @@ video {
 }
 
 .Hotel-Result {
-    height: 80vh;
+    height: 50vh;
     width: 25%;
     border: 2px solid red;
     display: inline-block;
+    margin-right: 30px;
+    border-bottom: 1px solid white;
 }
 
 .Hotel-Result img {
-    height: 90vh;
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Hotel-Map-Div {
+    border:5px solid green;
+    position: relative;
+    height:100%;
+    width: 100%;
 }
 
 .Food-List {
