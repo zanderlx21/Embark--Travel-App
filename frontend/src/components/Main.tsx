@@ -1,12 +1,11 @@
 import {useState, useEffect} from 'react'
+import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor } from '../services/YelpAPIService';
+import { Business, YelpModel } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import LocalOptions from './LocalOptions'
-import { fetchBusinesses } from '../services/YelpAPIService';
-import { Business } from '../models/YelpModel';
-
 import Header from './Header';
 import AboutLocation from './AboutLocation';
-import HotelSearchResults from './HotelResultsList';
+import HotelResultsList from './HotelResultsList';
 import FoodResultsList from './FoodResultsList';
 import OutdoorResultsList from './OutdoorsResultsList';
 // @ts-ignore
@@ -16,12 +15,21 @@ import videoBG from './video/video-BG.mp4'
 function Main() {
     // const [location, setLocation] = useState("")
     const [searchTerm, setSearchTerm] = useState<string>("");
-    const[ businessList, setBusinessList ] = useState<Business[]>([])
+    const[ foodList, setFoodList ] = useState<Business[]>([]);
+    const[ hotelList, setHotelList ] = useState<Business[]>([]);
+    // const[ IndoorList, setIndoorList ] = useState<YelpModel[]>([]);
+    // const[ OutdoorList, setOutdoorList ] = useState<YelpModel[]>([]);
 
     useEffect( () => {
-            if(searchTerm)  
-            fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
-              }, [searchTerm]); 
+        if(searchTerm)  
+        fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
+        if(searchTerm) 
+        fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
+    }, [searchTerm]);
+        // if(searchTerm) 
+        // fetchIndoor(searchTerm).then((response) => setIndoorList(response)) 
+        // if(searchTerm) 
+        // fetchOutdoor(searchTerm).then((response) => setOutdoorList(response)) 
             
     const handleSubmitForm = (searchTerm: string) => {
         setSearchTerm(searchTerm)
@@ -35,11 +43,12 @@ function Main() {
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation />
-            <HotelSearchResults />
-            <FoodResultsList businesses={businessList} />
+            <HotelResultsList businesses={hotelList} />
+            <FoodResultsList businesses={foodList} />
             <OutdoorResultsList />
+
         </div>
     )
 }
 
-export default Main
+export default Main;

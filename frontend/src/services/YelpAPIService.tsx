@@ -1,40 +1,56 @@
 import axios from "axios";
-import { Business } from "../models/YelpModel";
-
+import { Business, YelpModel } from "../models/YelpModel";
 
 const baseUrl = "http://localhost:5001/travelapp-f2d81/us-central1/api/search";
 
-export const fetchBusinesses = (query: string) => {
-
-  axios
-  .get<Business[]>(baseUrl, {
-    params: { location: query },
-  })
-  .then( res => console.log(res.data) )
+export const fetchFood = (query: string):Promise<YelpModel> => {
 
     return axios
-  .get<Business[]>((baseUrl), {
-    params: { location: query },
-  })
-  .then( res => res.data )
+      .get<YelpModel>((baseUrl), {
+        params: { location: query },
+      })
+      .then( res => (res.data)
+      )}
+
+export const fetchHotels = (query: string):Promise<YelpModel> => {
+
+  return axios
+    .get<YelpModel>((baseUrl)
+    , {
+      params:{ 
+        location: query,
+        categories: "hotels",
+      }}
+      )
+    .then( res => res.data)
 }
 
-// const response = await fetch(yelpBaseUrl);
-// const json = await response.json();
-// console.log(json);
+export const fetchIndoor = (query: string):Promise<YelpModel> => {
+
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: "museums,aquariums,escapegames"}
+    })
+    .then( res => res.data)
+}
+
+export const fetchOutdoor = (query: string):Promise<YelpModel> => {
+
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: "parks,zoos"}
+    })
+    .then( res => res.data)
+}
 
 
-// export function fetchSearchGiphy(query:string): Promise<Data[]> {
-
-//   return axios.get("https://api.giphy.com/v1/gifs/search", {  
-//   params: {
-//       q: query,
-//       api_key: apiKey
-//   }})
-  
-// .then(response => response.data.data);
-// }
-
+//for console logging
+  //   axios.get<Business[]>(baseUrl, {
+  //   params: { location: query, categories: "hotels" },
+  // })
+  // .then( res => console.log(res.data) )
 
 
 //"https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses"

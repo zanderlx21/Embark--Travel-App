@@ -1,6 +1,5 @@
 import { FoodResult } from './FoodResult';
-import { Business } from '../models/YelpModel';
-import React from 'react';
+import { Business, YelpModel } from '../models/YelpModel';
 
 export interface MainProp {
     businesses: Business[];
@@ -9,6 +8,7 @@ export interface MainProp {
 function FoodResultsList({businesses}:MainProp) {
 
     return (
+
         <div className='Food-List'>
             <h1>Restaurants</h1>
         {businesses.map( (business, i) => 

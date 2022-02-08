@@ -1,11 +1,18 @@
-import React from 'react'
+import { Business, YelpModel } from "../models/YelpModel"
 
-function HotelResult() {
+interface Prop {
+    business: Business,
+}
+
+export function HotelResult({business}:Prop) {
+  
     return (
-        <div className='Hotel-Result'>
-            <h1>Hotels</h1>
+
+        <div className="Hotel-Result">
+            <p>{business.name}</p>
+            <div className="image"><img src={business.url} alt="" /></div>
+            <p className="rating">{business.rating}</p>
+
         </div>
     )
 }
-
-export default HotelResult;
