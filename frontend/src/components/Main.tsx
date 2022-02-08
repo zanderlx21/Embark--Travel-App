@@ -26,6 +26,7 @@ function Main() {
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
 
+
     useEffect( () => {
         if(searchTerm) 
         fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
@@ -48,6 +49,7 @@ function Main() {
                 <source src={videoBG} type="video/mp4" />
             </video>
             <ItineraryList />
+            
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
