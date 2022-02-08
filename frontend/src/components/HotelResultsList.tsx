@@ -16,7 +16,6 @@ export function HotelResultsList ({businesses}:MainProp) {
             <h1>Hotels</h1>
         <div>
         {businesses.map((business, i) => <HotelResult key={i} business={business} />)}
-
         </div>
         </div>
     )

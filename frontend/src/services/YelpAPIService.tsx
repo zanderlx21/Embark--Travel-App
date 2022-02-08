@@ -7,8 +7,10 @@ export const fetchFood = (query: string):Promise<YelpModel> => {
 
     return axios
       .get<YelpModel>((baseUrl), {
-        params: { location: query },
-      })
+        params: { location: query,
+          categories: "food"
+        }}
+        )
       .then( res => (res.data)
       )}
 
@@ -17,13 +19,12 @@ export const fetchHotels = (query: string):Promise<YelpModel> => {
   return axios
     .get<YelpModel>((baseUrl)
     , {
-      params:{ 
-        location: query,
-        categories: "hotels",
+      params:{ location: query,
+        categories: "hotels"
       }}
       )
-    .then( res => res.data)
-}
+    .then( res => (res.data)
+    )}
 
 export const fetchIndoor = (query: string):Promise<YelpModel> => {
 

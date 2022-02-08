@@ -5,7 +5,7 @@ import SearchForm from './SearchForm'
 import LocalOptions from './LocalOptions'
 import Header from './Header';
 import AboutLocation from './AboutLocation';
-import HotelResultsList from './HotelResultsList';
+import { HotelResultsList } from './HotelResultsList';
 import FoodResultsList from './FoodResultsList';
 import OutdoorResultsList from './OutdoorsResultsList';
 // @ts-ignore
@@ -14,7 +14,7 @@ import videoBG from './video/video-BG.mp4'
 
 function Main() {
     // const [location, setLocation] = useState("")
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     // const[ IndoorList, setIndoorList ] = useState<YelpModel[]>([]);
@@ -44,9 +44,8 @@ function Main() {
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation />
             <HotelResultsList businesses={hotelList} />
-            <FoodResultsList businesses={foodList} />
-            <OutdoorResultsList />
-
+            {/* <FoodResultsList businesses={foodList} />
+            <OutdoorResultsList /> */}
         </div>
     )
 }
