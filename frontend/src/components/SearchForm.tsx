@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect, FormEvent } from 'react'
+import { useState, FormEvent } from 'react'
 import { Business } from '../models/YelpModel';
 // import BGvid from './video/Pexels Videos 2360537.mp4'
 import paradiseBG from './video/paradiseBG.jpg'

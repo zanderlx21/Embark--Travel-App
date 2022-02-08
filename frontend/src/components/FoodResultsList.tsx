@@ -1,5 +1,5 @@
 import { FoodResult } from './FoodResult';
-import { Business, YelpModel } from '../models/YelpModel';
+import { Business } from '../models/YelpModel';
 
 export interface MainProp {
     businesses: Business[];

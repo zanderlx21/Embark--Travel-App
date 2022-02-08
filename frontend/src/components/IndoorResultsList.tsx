@@ -1,5 +1,5 @@
 import IndoorResult from './IndoorResult';
-import { Business, YelpModel } from '../models/YelpModel';
+import { Business } from '../models/YelpModel';
 
 export interface MainProp {
     businesses: Business[];

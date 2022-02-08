@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor } from '../services/YelpAPIService';
-import { Business, YelpModel } from '../models/YelpModel';
+import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import LocalOptions from './LocalOptions'
 import Header from './Header';
@@ -19,7 +19,7 @@ export interface SearchTermProp {
 
 function Main() {
     // const [location, setLocation] = useState("")
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
