@@ -13,6 +13,5 @@ export interface Business {
         location: [
             {display_address: string}
         ]
-        
         display_phone: string
 }
