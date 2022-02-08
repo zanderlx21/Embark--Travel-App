@@ -7,10 +7,12 @@ interface Prop {
 export function HotelResult({business}:Prop) {
   
     return (
-        <div className="Result">
+
+        <div className="Hotel-Result">
             <p>{business.name}</p>
             <div className="image"><img src={business.url} alt="" /></div>
             <p className="rating">{business.rating}</p>
+
         </div>
     )
 }

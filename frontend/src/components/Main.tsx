@@ -1,10 +1,16 @@
 import {useState, useEffect} from 'react'
-import SearchForm from './SearchForm'
-import LocalOptions from './LocalOptions'
 import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor } from '../services/YelpAPIService';
 import { Business, YelpModel } from '../models/YelpModel';
+import SearchForm from './SearchForm'
+import LocalOptions from './LocalOptions'
+import Header from './Header';
+import AboutLocation from './AboutLocation';
+import HotelResultsList from './HotelResultsList';
 import FoodResultsList from './FoodResultsList';
-import {HotelResultsList} from "./HotelResultsList"
+import OutdoorResultsList from './OutdoorsResultsList';
+// @ts-ignore
+import videoBG from './video/video-BG.mp4'
+//
 
 function Main() {
     // const [location, setLocation] = useState("")
@@ -30,12 +36,16 @@ function Main() {
     }
 
     return (
-        <div>
+        <div className="Main">
+            <video autoPlay loop muted>
+                <source src={videoBG} type="video/mp4" />
+            </video>
+            <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
-
-            <FoodResultsList businesses={foodList} />
-
+            <AboutLocation />
             <HotelResultsList businesses={hotelList} />
+            <FoodResultsList businesses={foodList} />
+            <OutdoorResultsList />
 
         </div>
     )
