@@ -1,4 +1,3 @@
-import { Business } from "../models/YelpModel"
 
 
 export function Result() {

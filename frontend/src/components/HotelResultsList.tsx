@@ -1,7 +1,5 @@
-
 import { HotelResult } from './HotelResult';
-import { Business, YelpModel } from '../models/YelpModel';
-import React from 'react';
+import { Business } from '../models/YelpModel';
 
 export interface MainProp {
     businesses: Business[];
