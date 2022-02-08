@@ -3,6 +3,7 @@ import { Business, YelpModel } from "../models/YelpModel";
 
 const baseUrl = "http://localhost:5001/travelapp-f2d81/us-central1/api/search";
 
+
 export const fetchFood = (query: string):Promise<YelpModel> => {
 
     return axios
@@ -12,7 +13,7 @@ export const fetchFood = (query: string):Promise<YelpModel> => {
         }}
         )
       .then( res => (res.data)
-      )}
+)}
 
 export const fetchHotels = (query: string):Promise<YelpModel> => {
 
@@ -25,6 +26,7 @@ export const fetchHotels = (query: string):Promise<YelpModel> => {
       )
     .then( res => (res.data)
     )}
+
 
 export const fetchIndoor = (query: string):Promise<YelpModel> => {
 

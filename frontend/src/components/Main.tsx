@@ -5,7 +5,7 @@ import SearchForm from './SearchForm'
 import LocalOptions from './LocalOptions'
 import Header from './Header';
 import AboutLocation from './AboutLocation';
-import { HotelResultsList } from './HotelResultsList';
+import HotelResultsList from './HotelResultsList';
 import FoodResultsList from './FoodResultsList';
 import OutdoorResultsList from './OutdoorsResultsList';
 // @ts-ignore
@@ -21,10 +21,10 @@ function Main() {
     // const[ OutdoorList, setOutdoorList ] = useState<YelpModel[]>([]);
 
     useEffect( () => {
-        if(searchTerm)  
-        fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
         if(searchTerm) 
         fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
+        if(searchTerm)  
+        fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
     }, [searchTerm]);
         // if(searchTerm) 
         // fetchIndoor(searchTerm).then((response) => setIndoorList(response)) 
