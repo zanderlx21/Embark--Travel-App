@@ -11,6 +11,7 @@ import OutdoorResultsList from './OutdoorsResultsList';
 // @ts-ignore
 import videoBG from './video/video-BG.mp4'
 import IndoorResultsList from './IndoorResultsList';
+import { ItineraryList } from './ItineraryList';
 //
 
 export interface SearchTermProp {
@@ -40,11 +41,13 @@ function Main() {
         setSearchTerm(searchTerm)
     }
 
+
     return (
         <div className="Main">
             <video autoPlay loop muted>
                 <source src={videoBG} type="video/mp4" />
             </video>
+            <ItineraryList />
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
@@ -52,6 +55,7 @@ function Main() {
             {/* <FoodResultsList businesses={foodList} />
             <IndoorResultsList businesses={indoorList}/>
             <OutdoorResultsList businesses={outdoorList}/> */}
+
         </div>
     )
 }
