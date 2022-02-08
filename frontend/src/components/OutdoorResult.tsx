@@ -2,8 +2,8 @@ import React from 'react'
 
 function OutdoorResult() {
     return (
-        <div>
-            
+        <div className="Outdoors-Result">
+
         </div>
     )
 }
