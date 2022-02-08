@@ -14,17 +14,17 @@ import videoBG from './video/video-BG.mp4'
 
 function Main() {
     // const [location, setLocation] = useState("")
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     // const[ IndoorList, setIndoorList ] = useState<YelpModel[]>([]);
     // const[ OutdoorList, setOutdoorList ] = useState<YelpModel[]>([]);
 
     useEffect( () => {
-        if(searchTerm)  
-        fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
         if(searchTerm) 
         fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
+        if(searchTerm)  
+        fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
     }, [searchTerm]);
         // if(searchTerm) 
         // fetchIndoor(searchTerm).then((response) => setIndoorList(response)) 

@@ -1,23 +1,50 @@
 import express from 'express';
-// import { getClient } from '../db';
 import fetch from 'node-fetch';
+// import { getClient } from '../db';
 
 export const yelpRoutes = express.Router(); 
+// const apiKey = process.env.REACT_APP_YELP_API_KEY;
 
 yelpRoutes.get("/search", async (req, res) => {
-    console.log("/search");
+    // console.log("/search");
+
+    let location: string = req.query.location as string;
 
     try {
-        const api_url = 'https://api.yelp.com/v3/businesses/search?location=';
+        const api_url = `https://api.yelp.com/v3/businesses/search?location=${location}`;
 
-        let location: string = req.query.location as string;
+        let category:string = req.query.categories as string;
 
-        const fetch_response = await fetch(api_url + location, {
+        if (category === "hotels") {
+        let fetch_response1 = await fetch(api_url + "&categories=hotels", {
             headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
             });
-        const json = await fetch_response.json();
+
+        let json1 = await fetch_response1.json();
+        console.log(json1)
+        res.json(json1);
+        }
+
+        if (category === "food") {
+        let fetch_response2 = await fetch(api_url + "&categories=food", {
+            headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+            });
+
+        let json = await fetch_response2.json();
         console.log(json)
         res.json(json);
+        }
+
+        // if (category === "") {
+        //     let fetch_response2 = await fetch(api_url + "&categories=", {
+        //         headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+        //         });
+    
+        //     let json = await fetch_response2.json();
+        //     console.log(json)
+        //     res.json(json);
+        //     }
+        
     }
     catch (e){
         console.error("ERROR", e);

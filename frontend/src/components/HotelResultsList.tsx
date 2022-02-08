@@ -7,7 +7,7 @@ export interface MainProp {
     businesses: Business[];
 }
 
-export function HotelResultsList ({businesses}:MainProp) {
+function HotelResultsList ({businesses}:MainProp) {
     // console.log(businesses);
 
     return (
@@ -21,4 +21,6 @@ export function HotelResultsList ({businesses}:MainProp) {
         </div>
     )
 }
+
+export default HotelResultsList;
 
