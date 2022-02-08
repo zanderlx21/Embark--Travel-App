@@ -13,6 +13,7 @@ export function HotelResult({business}:Prop) {
             <p>{business.name}</p>
             {/* <div className="image"><img src={business.url} alt="" /></div> */}
             <p className="rating">{business.rating}</p>
+            <button id="Add-to-List">Add to Itinerary</button>
 
         </div>
     )
