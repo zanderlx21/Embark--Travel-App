@@ -1,12 +1,13 @@
-import React from 'react'
 import { FoodResult } from './FoodResult';
 import { Business } from '../models/YelpModel';
+import React from 'react';
 
 export interface MainProp {
     businesses: Business[];
 }
 
 function FoodResultsList({businesses}:MainProp) {
+
     return (
         <div className='Food-List'>
             <h1>Restaurants</h1>

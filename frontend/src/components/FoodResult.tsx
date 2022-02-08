@@ -5,6 +5,7 @@ interface Prop {
 }
 
 export function FoodResult({business}:Prop) {
+    console.log(business);
     return (
         <div className="Food-Result">
             <h1>Hello</h1>

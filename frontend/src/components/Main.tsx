@@ -14,13 +14,13 @@ import videoBG from './video/video-BG.mp4'
 //
 
 function Main() {
-    const [location, setLocation] = useState("")
+    // const [location, setLocation] = useState("")
     const [searchTerm, setSearchTerm] = useState<string>("");
     const[ businessList, setBusinessList ] = useState<Business[]>([])
 
     useEffect( () => {
             if(searchTerm)  
-            fetchBusinesses(searchTerm).then((response) => setBusinessList(businessList));
+            fetchBusinesses(searchTerm).then((response) => setBusinessList(response));
               }, [searchTerm]); 
             
     const handleSubmitForm = (searchTerm: string) => {
