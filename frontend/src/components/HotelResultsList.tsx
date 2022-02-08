@@ -1,11 +1,22 @@
-import React from 'react'
+import { HotelResult } from './HotelResult';
+import { Business, YelpModel } from '../models/YelpModel';
+import React from 'react';
 
-function HotelSearchResults() {
+export interface MainProp {
+    businesses: Business[];
+}
+
+export function HotelResultsList ({businesses}:MainProp) {
+    // console.log(businesses);
+
     return (
+        <div className="FoodResultList">
+            <h1>Hotel Results Placeholder</h1>
         <div>
-            
+        {businesses.map((business, i) => <HotelResult key={i} business={business} />)}
+
+        </div>
         </div>
     )
 }
 
-export default HotelSearchResults;
