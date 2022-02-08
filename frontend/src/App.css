@@ -1,233 +1,235 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Homemade+Apple&family=Lato:wght@100&family=Nunito+Sans&family=Open+Sans:wght@300&family=PT+Sans+Caption&family=Poppins&family=Roboto&display=swap'); 
- 
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Homemade+Apple&family=Lato:wght@100&family=Nunito+Sans&family=Open+Sans:wght@300&family=PT+Sans+Caption&family=Playfair+Display:ital,wght@1,900&family=Poppins&family=Roboto&display=swap');
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} 
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Homemade+Apple&family=Lato:wght@100&family=Nunito+Sans&family=Open+Sans:wght@300&family=PT+Sans+Caption&family=Poppins&family=Roboto&display=swap");
 
-body {
-    background-color: #eee;
-    width: 100vw;
-    overflow-x: hidden;
-    font-family: 'Nunito Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Homemade+Apple&family=Lato:wght@100&family=Nunito+Sans&family=Open+Sans:wght@300&family=PT+Sans+Caption&family=Playfair+Display:ital,wght@1,900&family=Poppins&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
+body {
+  background-color: #eee;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Nunito Sans", sans-serif;
+}
 
 .Header-Nav {
-    z-index: 1;
-    width: 100vw;
-    height: 70px;
-    background-color: rgb(24, 24, 24);
-    position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: row;
-    font-family: 'Nunito Sans', sans-serif;
-   
+  z-index: 1;
+  width: 100vw;
+  height: 70px;
+  background-color: rgb(24, 24, 24);
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .Header-Nav h1 {
-color: white;
-font-size: 3rem;
-padding-left: 15px;
+  color: white;
+  font-size: 3rem;
+  padding-left: 15px;
 }
 
 .Header-Nav span {
-    color: rgb(230, 126, 28);
+  color: rgb(230, 126, 28);
 }
 
-
 .Form-Container {
-    height: 100vh;
-    width: 100vw;
-    display: block;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-   
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .Form-Div {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-/* background-color: rgb(201, 139, 139); */
-height: 300px;
-width: 100%;
-position: absolute;
-left: 50%;
-top: 45%;
-transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: rgb(201, 139, 139); */
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
 }
 
 form {
-    min-width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  min-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.Form-Div h1{
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 50px;
-    font-size: 3rem;
-    width: 350px;
+.Form-Div h1 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 50px;
+  font-size: 3rem;
+  width: 350px;
 }
 
 #Search-Bar {
-    height: 50px;
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Poppins', serif;
-    transition: 800ms;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Poppins", serif;
+  transition: 800ms;
 }
 
 #Search-Bar:focus {
-transform: scale(1.1) ;
-transition: 400ms ease;
+  transform: scale(1.1);
+  transition: 400ms ease;
 }
 
 #Search-Bar::placeholder {
-    color: rgb(73, 73, 73);
-    text-align: center;
-    margin-left: 20px;
-    font-family: 'Poppins', serif;
+  color: rgb(73, 73, 73);
+  text-align: center;
+  margin-left: 20px;
+  font-family: "Poppins", serif;
 }
 
 #Search-Button {
-    width: 100px;
-    height: 27px;
-    align-self: flex-end;
-    border-radius: 20px;
-    border: none;
-    margin-top: 7px;
-    color: white;
-    background-color:rgba(230, 126, 28, 0.733);
-    font-family: 'Poppins', serif;
-    transition: 400ms;
+  width: 100px;
+  height: 27px;
+  align-self: flex-end;
+  border-radius: 20px;
+  border: none;
+  margin-top: 7px;
+  color: white;
+  background-color: rgba(230, 126, 28, 0.733);
+  font-family: "Poppins", serif;
+  transition: 400ms;
 }
 
 #Search-Button:hover {
-    transform: scale(1.03);
-    transition: 100ms;
-    color: white;
-    background-color: rgb(25, 199, 112);
+  transform: scale(1.03);
+  transition: 100ms;
+  color: white;
+  background-color: rgb(25, 199, 112);
 }
 .Main {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
-
 video {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    left: 50%;
-    top: 50%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    animation-name: blur;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  animation-name: blur;
 }
 
 .About-Location {
-    background-color: #eee;
-    font-size: 2rem;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: #eee;
+  font-size: 2rem;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.About-Location h1{
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
+.About-Location h1 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
 }
 
 .About-Location p {
-    width: 80%;
-    font-size: 1rem;
-    padding-top: 25px;
-    font-family: 'Poppins', serif;
+  width: 80%;
+  font-size: 1rem;
+  padding-top: 25px;
+  font-family: "Poppins", serif;
 }
 
 .About-Location div {
-    width: 100%;
-    height: 350px;
-    background-color: red;
-    margin-top: 15px;
+  width: 100%;
+  height: 350px;
+  background-color: red;
+  margin-top: 15px;
 }
 
 .About-Location img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .Hotel-List {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(52, 87, 180);
-
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(52, 87, 180);
 }
 
 .Hotel-Result {
-    height: 80vh;
-    width: 25%;
-    border: 2px solid red;
-    display: inline-block;
+  height: 50vh;
+  width: 25%;
+  border: 2px solid red;
+  display: inline-block;
+  margin-right: 30px;
+  border-bottom: 1px solid white;
 }
 
 .Hotel-Result img {
-    height: 90vh;
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Hotel-Map-Div {
+  border: 5px solid green;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .Food-List {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(255, 232, 104);
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(255, 232, 104);
 }
 
 .Food-Result {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .Outdoors-List {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(88, 206, 88);
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(88, 206, 88);
 }
 
-
 @media screen and (min-width: 760px) {
-    .Form-Div h1{
-        font-family: 'Playfair Display', serif;
-        margin-bottom: 50px;
-        font-size: 5rem;
-        width: 750px;
-    }
+  .Form-Div h1 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 50px;
+    font-size: 5rem;
+    width: 750px;
+  }
 
-    .About-Location p {
+  .About-Location p {
     width: 80%;
     font-size: 1.5rem;
     padding-top: 25px;
-}
+  }
 }

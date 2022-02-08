@@ -14,7 +14,7 @@ function HotelResultsList ({businesses}:MainProp) {
 
         <div className="Hotel-List">
             <h1>Hotels</h1>
-        <div>
+        <div className="Hotel-Map-Div">
         {businesses.map((business, i) => <HotelResult key={i} business={business} />)}
         </div>
         </div>
