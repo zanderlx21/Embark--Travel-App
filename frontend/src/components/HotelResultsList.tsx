@@ -1,9 +1,10 @@
 import React from 'react'
+import HotelResult from './HotelResult';
 
 function HotelSearchResults() {
     return (
-        <div>
-            
+        <div className="Hotel-List">
+            <HotelResult />
         </div>
     )
 }

@@ -2,8 +2,8 @@ import React from 'react'
 
 function HotelResult() {
     return (
-        <div>
-            
+        <div className='Hotel-Result'>
+            <h1>Hotels</h1>
         </div>
     )
 }
