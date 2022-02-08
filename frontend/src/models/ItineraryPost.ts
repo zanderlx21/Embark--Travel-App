@@ -1,6 +1,6 @@
 import React from "react";
 
-export default interface ItineraryPost {
+export interface ItineraryPost {
     name: string;
     rating: number;
     price: number;
