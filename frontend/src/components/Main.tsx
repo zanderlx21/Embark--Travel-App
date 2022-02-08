@@ -10,26 +10,31 @@ import FoodResultsList from './FoodResultsList';
 import OutdoorResultsList from './OutdoorsResultsList';
 // @ts-ignore
 import videoBG from './video/video-BG.mp4'
+import IndoorResultsList from './IndoorResultsList';
 //
+
+export interface SearchTermProp {
+    searchTerm: string;
+}
 
 function Main() {
     // const [location, setLocation] = useState("")
-    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
+    const [searchTerm, setSearchTerm] = useState<string>("");
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
-    // const[ IndoorList, setIndoorList ] = useState<YelpModel[]>([]);
-    // const[ OutdoorList, setOutdoorList ] = useState<YelpModel[]>([]);
+    const[ indoorList, setIndoorList ] = useState<Business[]>([]);
+    const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
 
     useEffect( () => {
         if(searchTerm) 
         fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
         if(searchTerm)  
         fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
+        if(searchTerm) 
+        fetchIndoor(searchTerm).then((data) => setIndoorList(data.businesses)) 
+        if(searchTerm) 
+        fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses)) 
     }, [searchTerm]);
-        // if(searchTerm) 
-        // fetchIndoor(searchTerm).then((response) => setIndoorList(response)) 
-        // if(searchTerm) 
-        // fetchOutdoor(searchTerm).then((response) => setOutdoorList(response)) 
             
     const handleSubmitForm = (searchTerm: string) => {
         setSearchTerm(searchTerm)
@@ -42,10 +47,11 @@ function Main() {
             </video>
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
-            <AboutLocation />
+            <AboutLocation searchTerm={searchTerm}/>
             <HotelResultsList businesses={hotelList} />
             {/* <FoodResultsList businesses={foodList} />
-            <OutdoorResultsList /> */}
+            <IndoorResultsList businesses={indoorList}/>
+            <OutdoorResultsList businesses={outdoorList}/> */}
         </div>
     )
 }

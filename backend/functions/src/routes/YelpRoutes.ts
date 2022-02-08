@@ -16,35 +16,44 @@ yelpRoutes.get("/search", async (req, res) => {
         let category:string = req.query.categories as string;
 
         if (category === "hotels") {
-        let fetch_response1 = await fetch(api_url + "&categories=hotels", {
-            headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+            let fetch_response1 = await fetch(api_url + "&categories=hotels", {
+                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
             });
 
-        let json1 = await fetch_response1.json();
-        console.log(json1)
-        res.json(json1);
-        }
+            let json1 = await fetch_response1.json();
+            console.log(json1)
+            res.json(json1);
+            }
 
         if (category === "food") {
-        let fetch_response2 = await fetch(api_url + "&categories=food", {
-            headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+            let fetch_response2 = await fetch(api_url + "&categories=food", {
+                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
             });
 
-        let json = await fetch_response2.json();
-        console.log(json)
-        res.json(json);
+            let json2 = await fetch_response2.json();
+            console.log(json2)
+            res.json(json2);
         }
 
-        // if (category === "") {
-        //     let fetch_response2 = await fetch(api_url + "&categories=", {
-        //         headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
-        //         });
+        if (category === "museums,aquariums,escapegames") {
+            let fetch_response3 = await fetch(api_url + "&categories=museums,aquariums,escapegames", {
+                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+            });
     
-        //     let json = await fetch_response2.json();
-        //     console.log(json)
-        //     res.json(json);
-        //     }
+            let json3 = await fetch_response3.json();
+            console.log(json3)
+            res.json(json3);
+            }
+        if (category === "parks,zoos") {
+            let fetch_response4 = await fetch(api_url + "&categories=parks,zoos", {
+                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+            });
         
+            let json4 = await fetch_response4.json();
+            console.log(json4)
+            res.json(json4);
+            }
+
     }
     catch (e){
         console.error("ERROR", e);
