@@ -1,12 +1,20 @@
-import React from 'react'
 import IndoorResult from './IndoorResult';
+import { Business, YelpModel } from '../models/YelpModel';
 
-function IndoorResultsList() {
-    return (
-        <div>
-            <IndoorResult />
-        </div>
-    )
+export interface MainProp {
+    businesses: Business[];
 }
+
+function IndoorResultsList({businesses}:MainProp) {
+    return (
+
+    <div className='Food-List'>
+        <h1>Indoor</h1>
+            {businesses.map( (business, i) => 
+            <IndoorResult key={i} business={business} />)}
+</div>
+)
+}
+
 
 export default IndoorResultsList;

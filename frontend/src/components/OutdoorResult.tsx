@@ -1,9 +1,18 @@
 import React from 'react'
+import { Business, YelpModel } from "../models/YelpModel"
 
-function OutdoorResult() {
+interface Prop {
+    business: Business,
+}
+
+function OutdoorResult({business}:Prop) {
     return (
-        <div className="Outdoors-Result">
 
+        <div className="Outdoor-Result">
+            <h1>Outdoor</h1>
+            <p>{business.name}</p>
+            <div className="image"><img src={business.url} alt="" /></div>
+            <p className="rating">{business.rating}</p>
         </div>
     )
 }
