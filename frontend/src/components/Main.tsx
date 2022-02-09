@@ -19,7 +19,7 @@ export interface SearchTermProp {
 
 function Main() {
     // const [location, setLocation] = useState("")
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
@@ -51,7 +51,7 @@ function Main() {
                 <source src={videoBG} type="video/mp4" />
             </video>
 
-            <Header />
+            <Header searchTerm={searchTerm}/>
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>

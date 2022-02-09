@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Business } from "../models/YelpModel";
 import { ItineraryList } from "./ItineraryList";
+import { SearchTermProp } from "./Main";
 
 const menuIcon = <svg width="31" height="25" viewBox="0 0 318 253" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 20H317.288" stroke="white" stroke-width="40"/>
@@ -9,12 +10,12 @@ const menuIcon = <svg width="31" height="25" viewBox="0 0 318 253" fill="none" x
 </svg>
 
 
-function Header() {
+function Header({searchTerm}:SearchTermProp) {
     const [hidden, setHidden] = useState<boolean>(true);
 
     function sliderClickHandler() {
     hidden ? setHidden(false) : setHidden(true)
-    console.log(hidden)
+    // console.log(hidden)
     }
 
     return (
@@ -23,7 +24,7 @@ function Header() {
             <button id="Itinerary-Slider" onClick={sliderClickHandler}>|</button>
 
             <div>
-            {(!hidden) ? <ItineraryList /> : null}
+            {(!hidden) ? <ItineraryList searchTerm={searchTerm}/> : null}
             </div>
             
             {/* <div className="Menu-Icon">{menuIcon}</div> */}

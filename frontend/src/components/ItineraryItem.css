@@ -1,0 +1,25 @@
+h3 {
+    text-align: center;
+    margin: 15px;
+}
+
+.Itinerary-Item {
+    display: block;
+}
+
+.Outer-Item-Div {
+    display: flex;
+}
+
+.Inner-Div1 {
+    width: 35%;
+    margin: 5px;
+    text-align: center;
+
+}
+
+.Inner-Div2 {
+    width: 75%;
+    text-align: left;
+    margin: 5px;
+}
