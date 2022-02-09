@@ -19,11 +19,11 @@ export function HotelResult({business, onFavorite}:Prop) {
 
         <div className="Hotel-Result">
             <img src={business.image_url} alt="image of Restaurant Lobby" />
-            <p>{business.name}</p>
+            <p className="Business-Name-on-Card">{business.name}</p>
             {/* <div className="image"><img src={business.url} alt="" /></div> */}
-            <p className="rating">{business.rating}</p>
+            <p className="Rating">{business.rating}</p>
 
-            <button id="Add-to-List" onClick={likeButton} >Add to Itinerary</button>
+            <button id="Add-to-List-Button" onClick={likeButton} >Add to Itinerary</button>
 
         </div>
     )

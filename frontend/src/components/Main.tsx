@@ -9,8 +9,10 @@ import FoodResultsList from './FoodResultsList';
 import OutdoorResultsList from './OutdoorsResultsList';
 // @ts-ignore
 import videoBG from './video/video-BG.mp4'
+//
 import IndoorResultsList from './IndoorResultsList';
 import { ItineraryList } from './ItineraryList';
+import ImageSlider from './ImageSlider';
 
 
 export interface SearchTermProp {
@@ -55,7 +57,7 @@ function Main() {
             <video autoPlay loop muted>
                 <source src={videoBG} type="video/mp4" />
             </video>
-            
+
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
