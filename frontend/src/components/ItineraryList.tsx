@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { itineraries, deleteFavorite } from "../models/ItineraryPost";
+import { deleteFavorite } from "../models/ItineraryPost";
 import { Business } from "../models/YelpModel";
 import { ItineraryItem } from "./ItineraryItem";
 
@@ -18,9 +18,9 @@ export function ItineraryList() {
     return (
         <div className="Itinerary-List">
             <h2>Your Itinerary</h2>
-            {itineraries.map((business, i)=> 
+            {/* {itineraries.map((business, i)=> 
             <ItineraryItem key={i} business={business} onDelete={()=>handleDeleteFavorite(i)} 
-            />)}
+            />)} */}
         </div>
     )
 }

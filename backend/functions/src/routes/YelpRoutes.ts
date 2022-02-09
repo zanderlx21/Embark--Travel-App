@@ -1,9 +1,10 @@
 import express from 'express';
 import fetch from 'node-fetch';
-// import { getClient } from '../db';
 
 export const yelpRoutes = express.Router(); 
 // const apiKey = process.env.REACT_APP_YELP_API_KEY;
+
+/// YELP API
 
 yelpRoutes.get("/search", async (req, res) => {
     // console.log("/search");
@@ -61,15 +62,3 @@ yelpRoutes.get("/search", async (req, res) => {
     }
 });
 
-
-
-
-//     try {
-//         const client = await getClient();
-//         const results = await client.db().collection("yelpSearch").find().toArray();
-//         res.json(results);
-//     } catch (err) {
-//         console.error("ERROR", err);
-//         res.status(500).json({ message: "Internal Server Error" });
-//         }
-// });

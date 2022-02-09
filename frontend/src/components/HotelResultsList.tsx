@@ -13,7 +13,6 @@ function HotelResultsList ({businesses}:MainProp) {
     }
 
     return (
-
         <div className="Hotel-List">
             <h1>Hotels</h1>
         <div className="Hotel-Map-Div">

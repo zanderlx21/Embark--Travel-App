@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor } from '../services/YelpAPIService';
+import { fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, fetchOutdoor, postItineraryItem } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import Header from './Header';
@@ -24,6 +24,14 @@ function Main() {
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
+    const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
+
+    // useEffect( ()=> {
+    //     fetchItineraryList().then(data => {
+    //         setItineraryItems(data);
+    //         console.log(data);
+    //     });
+    // },[]);
 
 
     useEffect( () => {

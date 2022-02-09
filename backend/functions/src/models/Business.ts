@@ -1,10 +1,7 @@
-
-export interface YelpModel {
-    businesses: Business[],
-}
+import { ObjectId } from "mongodb";
 
 export interface Business {
-    _id?: string,
+    _id?: ObjectId,
     name: string,
     image_url: string, 
     review_count: number,

@@ -1,20 +1,14 @@
-import { Business, YelpModel } from "./YelpModel";
+import { Business } from "./YelpModel";
+import { postItineraryItem } from "../services/YelpAPIService";
 
-// export interface ItineraryPost {
-//     name: string;
-//     rating: number;
-//     price: number;
-//     type: string;
-//     time: number;
-// }
-
-export let itineraries: Business[] = [];
+// export let itineraries: Business[] = [];
 
 export function addFavorite(business:Business){
-    itineraries.push(business);
-    console.log(itineraries)
+    postItineraryItem(business);
+    console.log(business)
 }
 
 export function deleteFavorite(index: number) {
-    itineraries.splice(index, 1);
+    // itineraries.splice(index, 1);
 }
+
