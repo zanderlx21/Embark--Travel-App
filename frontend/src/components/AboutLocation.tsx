@@ -2,9 +2,12 @@ import { SearchTermProp } from './Main';
 
 
 function AboutLocation({searchTerm}:SearchTermProp) {
+
+    
     return (
         <div className='About-Location'>
             <h3>Destination</h3>
+            <h2></h2>
             <h1>{searchTerm}</h1>
             <div><img src="https://blog-www.pods.com/wp-content/uploads/2021/03/resized_FI_Getty_San-Francisco-CA-1-1536x850.jpg"/></div>
             
