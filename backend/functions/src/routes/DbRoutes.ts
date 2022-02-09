@@ -22,7 +22,7 @@ dbRoutes.post("/", async (req, res) => {
 
     try {
         const client = await getClient();
-        await client.db().collection<Business>('itinerarylist').insertOne(item);
+        await client.db().collection<Business>('itinerary').insertOne(item);
         res.status(201);
         res.json(item);
 

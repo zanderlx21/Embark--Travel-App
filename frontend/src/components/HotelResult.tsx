@@ -22,6 +22,7 @@ export function HotelResult({business, onFavorite}:Prop) {
             <p className="Business-Name-on-Card">{business.name}</p>
             {/* <div className="image"><img src={business.url} alt="" /></div> */}
             <p className="Rating">{business.rating}</p>
+            <p className="Price">{business.price}</p>
 
             <button id="Add-to-List-Button" onClick={likeButton} >Add to Itinerary</button>
 

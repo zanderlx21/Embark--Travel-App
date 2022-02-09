@@ -15,5 +15,5 @@ function OutdoorResult({business}:Prop) {
         </div>
     )
 }
-
+ 
 export default OutdoorResult;
