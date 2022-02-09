@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import { fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, fetchOutdoor, postItineraryItem } from '../services/YelpAPIService';
+import { deleteItineraryItem, fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, fetchOutdoor, postItineraryItem } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import Header from './Header';
@@ -12,8 +12,6 @@ import videoBG from './video/video-BG.mp4'
 //
 import IndoorResultsList from './IndoorResultsList';
 import { ItineraryList } from './ItineraryList';
-import ImageSlider from './ImageSlider';
-
 
 export interface SearchTermProp {
     searchTerm: string;
@@ -26,15 +24,6 @@ function Main() {
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
-    const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
-
-    // useEffect( ()=> {
-    //     fetchItineraryList().then(data => {
-    //         setItineraryItems(data);
-    //         console.log(data);
-    //     });
-    // },[]);
-
 
     useEffect( () => {
         if(searchTerm) 
@@ -51,6 +40,10 @@ function Main() {
         setSearchTerm(searchTerm)
     }
 
+    function addToItinerary(business: Business){
+        postItineraryItem(business);
+        console.log(business);
+    }
 
     return (
         <div className="Main">
@@ -61,7 +54,7 @@ function Main() {
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
-            <HotelResultsList businesses={hotelList} />
+            <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>
             {/* <FoodResultsList businesses={foodList} />
             <IndoorResultsList businesses={indoorList}/>
             <OutdoorResultsList businesses={outdoorList}/> */}

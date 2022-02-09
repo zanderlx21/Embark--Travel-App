@@ -1,28 +1,20 @@
 import { HotelResult } from './HotelResult';
 import { Business } from '../models/YelpModel';
-import { addFavorite } from '../models/ItineraryPost';
 
 export interface MainProp {
     businesses: Business[];
+    onAdd: (business:Business)=>void;
+    // onDelete: (business:Business)=>void;
 }
 
-const pos = { top: 0, left: 0, x: 0, y: 0 };
-
-function HotelResultsList ({businesses}:MainProp) {
-
-    function addToFavorites(business: Business){
-        addFavorite(business);
-    }
+function HotelResultsList ({businesses, onAdd}:MainProp) {
 
     return (
         <div className="Hotel-List">
-            <h1>Hotels</h1>
-            
+            <h1>Hotels</h1>     
         <div className="Hotel-Map-Div">
-        {businesses.map((business, i) => <HotelResult key={i} business={business} onFavorite={addToFavorites} />)}
+        {businesses.map((business, i) => <HotelResult key={i} business={business} onAdd={()=>onAdd(business)}/>)}
         </div>
-
-
         </div>
     )
 }

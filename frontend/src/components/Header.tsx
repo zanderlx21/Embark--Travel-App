@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Business } from "../models/YelpModel";
 import { ItineraryList } from "./ItineraryList";
 
 const menuIcon = <svg width="31" height="25" viewBox="0 0 318 253" fill="none" xmlns="http://www.w3.org/2000/svg">
