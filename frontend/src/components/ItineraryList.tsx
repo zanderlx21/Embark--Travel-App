@@ -37,7 +37,7 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
 
     return (
         <div className="Itinerary-List">
-            <h2 className="H2-Itinerary-List">Your Itinerary for {searchTerm}</h2>
+            <h2 className="H2-Itinerary-List">Your Itinerary for <p className="Itinerary-List-Name">{searchTerm}</p></h2>
             {itineraryItems.map((business, i)=> 
             <ItineraryItem key={i} business={business} onDelete={()=>deleteFromItinerary(business)}/>)}
         </div>
