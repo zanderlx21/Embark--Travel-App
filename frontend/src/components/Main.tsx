@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor } from '../services/YelpAPIService';
-import { Business, YelpModel } from '../models/YelpModel';
+import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import LocalOptions from './LocalOptions'
 import Header from './Header';
@@ -11,6 +11,7 @@ import OutdoorResultsList from './OutdoorsResultsList';
 // @ts-ignore
 import videoBG from './video/video-BG.mp4'
 import IndoorResultsList from './IndoorResultsList';
+import { ItineraryList } from './ItineraryList';
 //
 
 export interface SearchTermProp {
@@ -19,11 +20,12 @@ export interface SearchTermProp {
 
 function Main() {
     // const [location, setLocation] = useState("")
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
+
 
     useEffect( () => {
         if(searchTerm) 
@@ -40,11 +42,14 @@ function Main() {
         setSearchTerm(searchTerm)
     }
 
+
     return (
         <div className="Main">
             <video autoPlay loop muted>
                 <source src={videoBG} type="video/mp4" />
             </video>
+            <ItineraryList />
+            
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
@@ -52,6 +57,7 @@ function Main() {
             {/* <FoodResultsList businesses={foodList} />
             <IndoorResultsList businesses={indoorList}/>
             <OutdoorResultsList businesses={outdoorList}/> */}
+
         </div>
     )
 }

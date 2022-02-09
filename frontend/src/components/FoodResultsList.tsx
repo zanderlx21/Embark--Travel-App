@@ -1,5 +1,6 @@
 import { FoodResult } from './FoodResult';
-import { Business, YelpModel } from '../models/YelpModel';
+import { Business } from '../models/YelpModel';
+// import { ItineraryPost } from '../models/ItineraryPost';
 
 export interface MainProp {
     businesses: Business[];
@@ -7,12 +8,14 @@ export interface MainProp {
 
 function FoodResultsList({businesses}:MainProp) {
 
+
     return (
 
         <div className='Food-List'>
             <h1>Restaurants</h1>
         {businesses.map( (business, i) => 
-        <FoodResult key={i} business={business} />)}
+        <FoodResult key={i} business={business} 
+        />)} 
         </div>
     )
 }

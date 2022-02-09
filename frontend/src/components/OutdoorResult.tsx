@@ -1,5 +1,4 @@
-import React from 'react'
-import { Business, YelpModel } from "../models/YelpModel"
+import { Business } from "../models/YelpModel"
 
 interface Prop {
     business: Business,

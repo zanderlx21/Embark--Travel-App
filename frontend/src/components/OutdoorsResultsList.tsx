@@ -1,5 +1,3 @@
-import React from 'react'
-import OutdoorResult from './OutdoorResult';
 import { Business } from '../models/YelpModel';
 import IndoorResult from './IndoorResult';
 
