@@ -1,30 +1,22 @@
 import { Business } from "../models/YelpModel"
-import { useState } from 'react';
 
-interface Prop {
-    business: Business,
-    onFavorite: (business:Business)=>void
+interface MainProp {
+    business: Business;
+    onAdd: ()=>void
+    // onDelete: (business:Business)
 }
 
-export function HotelResult({business, onFavorite}:Prop) {
-
-    const [ liked, setLiked ] = useState(false);
-
-    let likeButton = () => {
-        onFavorite(business);
-        // setLiked(true)
-    }
+export function HotelResult({business, onAdd}:MainProp) {
 
     return (
 
         <div className="Hotel-Result">
             <img src={business.image_url} alt="image of Restaurant Lobby" />
             <p className="Business-Name-on-Card">{business.name}</p>
-            {/* <div className="image"><img src={business.url} alt="" /></div> */}
             <p className="Rating">{business.rating}</p>
             <p className="Price">{business.price}</p>
 
-            <button id="Add-to-List-Button" onClick={likeButton} >Add to Itinerary</button>
+            <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
 
         </div>
     )

@@ -10,6 +10,7 @@ dbRoutes.get("/", async (req, res) => {
     try {
         const client = await getClient();
         const results = await client.db().collection<Business>("itinerary").find().toArray();
+        console.log(results);
         res.json(results);
     } catch (err) {
         console.error("ERROR", err);
@@ -19,11 +20,13 @@ dbRoutes.get("/", async (req, res) => {
 
 dbRoutes.post("/", async (req, res) => {
     const item: Business = req.body as Business;
+    console.log("hellooo" + item)
 
     try {
         const client = await getClient();
         await client.db().collection<Business>('itinerary').insertOne(item);
         res.status(201);
+        console.log(item);
         res.json(item);
 
     }
@@ -38,7 +41,7 @@ dbRoutes.delete("/", async (req, res) => {
 
     try {
         const client = await getClient();
-        await client.db().collection<Business>('itinerarylist').deleteOne(item);
+        await client.db().collection<Business>('itinerary').deleteOne(item);
         res.status(201);
         res.json(item);
 
