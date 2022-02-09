@@ -5,7 +5,7 @@ export interface YelpModel {
 
 export interface Business {
         name: string,
-        url: string, 
+        image_url: string, 
         review_count: number,
         rating: number,
         price: string,
