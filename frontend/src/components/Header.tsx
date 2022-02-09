@@ -1,4 +1,4 @@
-// import menuIcon from "../../public/Hamburger-Menu-White.jpg"
+import { useState } from "react";
 
 const menuIcon = <svg width="31" height="25" viewBox="0 0 318 253" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 20H317.288" stroke="white" stroke-width="40"/>
@@ -8,9 +8,12 @@ const menuIcon = <svg width="31" height="25" viewBox="0 0 318 253" fill="none" x
 
 
 function Header() {
+    const [hidden, setHidden] = useState<boolean>(true);
+
     return (
         <nav className="Header-Nav">
             <h1 id="Logo-Header"><span id="Logo-E">e</span>mbark</h1>
+            <button id="Itinerary-Slider" onClick={ ()=> setHidden(false)}>|</button>
             {/* <div className="Menu-Icon">{menuIcon}</div> */}
             {/* <ul>
                 <li><a href="#">Hotels</a></li>
