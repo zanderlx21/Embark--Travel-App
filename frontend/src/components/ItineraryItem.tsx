@@ -9,11 +9,11 @@ interface Props {
 export function ItineraryItem({business, onDelete}:Props) {
 
     return (
-        <div className="ItineraryItem">
-            <h1>ITINERARY LIST</h1>
+        <div className="Itinerary-Item">
+            <h1>Hooray!</h1>
 
             <p>{business.name}</p>
-            <p>{business.rating} <i className="material-icons" onClick={onDelete}>delete</i></p>
+            <p>{business.rating} <i className="material-icons" id="Trash-Can" onClick={onDelete}>delete</i></p>
             
         </div>
     )

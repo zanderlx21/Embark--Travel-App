@@ -28,7 +28,7 @@ body {
 }
 
 .Header-Nav h1 {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 3rem;
   padding-left: 15px;
 }
@@ -41,21 +41,63 @@ body {
     font-size: 3.5rem;
     position: fixed;
     right: 0px;
-    top: 300px;
-    height: 175px;
-    width: 50px;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    top: 200px;
+    height: 115px;
+    width: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     background-color: rgb(53, 115, 231);
     border: none;
     color: white;
     transition: 300ms;
+    z-index: 10;
 }
 
 #Itinerary-Slider:hover {
     background-color: rgb(72, 129, 235);
     transform: scale(1.02);
     transition: 300ms;
+}
+
+#Itinerary-Slider:active {
+    transform: translateX(-5px);
+    width: 35px;
+    transition: 100ms;
+}
+
+.Itinerary-List {
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    background-color: rgb(241, 241, 241);
+    transition: 2.50s;
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll ;
+    
+}
+
+.Itinerary-List h2 {
+/* text-align: center; */
+padding-left: 100px;
+}
+
+.Itinerary-Item {
+    justify-content: center;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    width: 90%;
+}
+
+.Itinerary-Item h1 {
+    color:rgb(3, 23, 59)
+}
+
+#Trash-Can {
+float: right;
 }
 
 .Form-Container {
@@ -149,6 +191,7 @@ form {
 .Main {
   height: 100vh;
   width: 100vw;
+  /* background-color: rgba(121, 177, 185, 0.123); */
 }
 
 video {
@@ -245,6 +288,27 @@ video {
 }
 
 @media screen and (min-width: 760px) {
+    #Itinerary-Slider {
+        font-size: 3.5rem;
+        position: fixed;
+        right: 0px;
+        top: 300px;
+        height: 175px;
+        width: 50px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        background-color: rgb(53, 115, 231);
+        border: none;
+        color: white;
+        transition: 300ms;
+    }
+
+    .Itinerary-List {
+        width: 20%;
+        right: 0;
+    }
+
+        
   .Form-Div h1 {
     font-family: "Playfair Display", serif;
     margin-bottom: 50px;

@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react'
 import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
-import LocalOptions from './LocalOptions'
 import Header from './Header';
 import AboutLocation from './AboutLocation';
 import HotelResultsList from './HotelResultsList';
@@ -12,7 +11,7 @@ import OutdoorResultsList from './OutdoorsResultsList';
 import videoBG from './video/video-BG.mp4'
 import IndoorResultsList from './IndoorResultsList';
 import { ItineraryList } from './ItineraryList';
-//
+
 
 export interface SearchTermProp {
     searchTerm: string;
@@ -48,7 +47,6 @@ function Main() {
             <video autoPlay loop muted>
                 <source src={videoBG} type="video/mp4" />
             </video>
-            <ItineraryList />
             
             <Header />
             <SearchForm onSubmit={handleSubmitForm} /> 
