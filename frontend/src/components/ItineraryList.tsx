@@ -20,19 +20,8 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
     function deleteFromItinerary(business:Business) {
         deleteItineraryItem(business);
 
-        function deleteItem(index: number) {
-            itineraryItems.splice(index, 1);
-
+        let index = itineraryItems.findIndex(b => b._id === business._id);
             setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
-            deleteItem(index);
-            console.log(index)
-        }
-
-        // let handleDeleteItem = (index: number) => {
-        //     setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
-        //     deleteItem(index);
-        //     console.log(index)
-        // }
     }
 
     return (
