@@ -8,7 +8,7 @@ interface MainProp {
     onClose: ()=>void;
 }
 
-export function HotelResultExpanded({business, onAdd, onClose}:MainProp) {
+export function FoodResultExpanded({business, onAdd, onClose}:MainProp) {
     return (
         <div className="Results-Expanded">
             <p className="Close"><i className="material-icons" onClick={onClose}>close</i></p>
