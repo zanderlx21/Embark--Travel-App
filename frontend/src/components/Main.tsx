@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
-import { deleteItineraryItem, fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, fetchOutdoor, postItineraryItem } from '../services/YelpAPIService';
+import { deleteItineraryItem, fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, 
+    fetchOutdoor, postItineraryItem } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import Header from './Header';
@@ -12,6 +13,7 @@ import videoBG from './video/video-BG.mp4'
 //
 import IndoorResultsList from './IndoorResultsList';
 import { ItineraryList } from './ItineraryList';
+import { HotelResultExpanded } from './HotelResultExpanded';
 
 export interface SearchTermProp {
     searchTerm: string;
