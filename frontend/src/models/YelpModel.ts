@@ -16,4 +16,7 @@ export interface Business {
     ]
     display_phone: string,
     url: string
+    categories: [
+        {title: string}
+    ]
 }
