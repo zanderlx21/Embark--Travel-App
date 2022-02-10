@@ -3,13 +3,6 @@ import { Business } from "../models/YelpModel";
 import { ItineraryList } from "./ItineraryList";
 import { SearchTermProp } from "./Main";
 
-const menuIcon = <svg width="31" height="25" viewBox="0 0 318 253" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 20H317.288" stroke="white" stroke-width="40"/>
-<path d="M0 126.244H317.288" stroke="white" stroke-width="40"/>
-<path d="M0 233H317.288" stroke="white" stroke-width="40"/>
-</svg>
-
-
 function Header({searchTerm}:SearchTermProp) {
     const [hidden, setHidden] = useState<boolean>(true);
 
