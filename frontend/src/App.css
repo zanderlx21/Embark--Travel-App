@@ -10,7 +10,10 @@
 
 html {
   height: -webkit-fill-available;
-  
+
+  -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
 }
 
 body {
