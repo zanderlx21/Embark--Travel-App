@@ -408,6 +408,100 @@ video{
 #Outdoor-List {
   background-color: #4bc286;
 }
+
+.Extra-Form-Container {
+  height: 50vh;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Extra-Form-Container h1 {
+  font-size: 2.5rem;
+  transform: translateY( -25px)
+}
+
+#Extra-Search-Bar {
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+  
+  font-weight: 600;
+  font-family: "Poppins", serif;
+  transition: 800ms;
+}
+
+#Extra-Search-Bar:focus {
+  transform: scale(1.1);
+  transition: 400ms ease;
+}
+
+#xtra-Search-Bar::placeholder {
+  color: rgb(109, 109, 109);
+  text-align: center;
+  margin-left: 20px;
+  font-family: "Poppins", serif;
+}
+
+#Extra-Search-Button {
+  width: 100px;
+  height: 27px;
+  align-self: flex-end;
+  border-radius: 20px;
+  border: none;
+  margin-top: 7px;
+  color: white;
+  background-color: rgba(230, 126, 28, 0.733);
+  font-family: "Poppins", serif;
+  transition: 400ms;
+}
+
+#Extra-Search-Button:hover {
+  transform: scale(1.03);
+  transition: 100ms;
+  color: white;
+  background-color: rgb(25, 199, 112);
+}
+
+.Footer {
+  background-color: rgb(24, 24, 24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.Footer h1 {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  padding-left: 15px;
+}
+
+.Footer span {
+  color: rgb(230, 126, 28);
+}
+
+.Footer span, 
+.Footer h1{
+animation: pulse 3s infinite
+}
+
+@keyframes pulse{
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /* ----------------------------------------760 SCREEN VIEW BELOW */
 @media screen and (min-width: 760px) {
     #Itinerary-Slider {

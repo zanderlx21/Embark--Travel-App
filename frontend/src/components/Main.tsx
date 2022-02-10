@@ -14,6 +14,8 @@ import videoBG from './video/video-BG.mp4'
 import IndoorResultsList from './IndoorResultsList';
 import { ItineraryList } from './ItineraryList';
 import { HotelResultExpanded } from './HotelResultExpanded';
+import ExtraForm from './ExtraForm';
+import Footer from './Footer';
 
 export interface SearchTermProp {
     searchTerm: string;
@@ -59,8 +61,10 @@ function Main() {
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>
             <FoodResultsList businesses={foodList} onAdd={addToItinerary} />
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
-            
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
+            
+            <ExtraForm onSubmit={handleSubmitForm} />
+            <Footer />
 
         </div>
     )

@@ -1,7 +1,5 @@
 import { useState, FormEvent } from 'react'
 import { Business } from '../models/YelpModel';
-// import BGvid from './video/Pexels Videos 2360537.mp4'
-import paradiseBG from './video/paradiseBG.jpg'
         
 interface Prop {
     onSubmit: (searchTerm: string) => void;
