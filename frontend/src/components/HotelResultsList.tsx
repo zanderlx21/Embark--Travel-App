@@ -8,13 +8,13 @@ export interface MainProp {
     // onDelete: (business:Business)=>void;
 }
 
-
 function HotelResultsList ({businesses, onAdd}:MainProp) {
 
     return (
         <div className="Component-List" id="Hotel-List">
             <h1>Hotels</h1>     
-        <div className="Component-Map-Div">
+        <div className="Component-Map-Div"> 
+
         {businesses.map((business, i) => 
         <HotelResult key={i} business={business} onAdd={()=>onAdd(business)}/>)}
         </div>

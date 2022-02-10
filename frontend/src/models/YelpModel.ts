@@ -11,9 +11,9 @@ export interface Business {
     rating: number,
     price: string,
     is_closed: boolean,
-    location: [
+    location: 
         {display_address: string}
-    ]
+    
     display_phone: string,
     url: string
     categories: [

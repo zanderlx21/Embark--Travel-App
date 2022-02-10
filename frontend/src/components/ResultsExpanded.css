@@ -1,0 +1,24 @@
+.Results-Expanded {
+
+        display: flex;
+        width: 65vh;
+        height: 75vh;
+        flex-direction: column;
+        position: relative;
+        margin: 20px auto;
+        background: #fff;
+        border-radius: 2px;
+}
+
+.Close {
+    text-align: right;
+}
+
+.Expanded-Img {
+    text-align: center;
+}
+
+.Expanded-H2 {
+    text-align: center;
+}
+
