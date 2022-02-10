@@ -1,10 +1,8 @@
 import { useState, FormEvent } from 'react' 
 
-
 interface Prop {
     onSubmit: (searchTerm: string) => void;
 }
-
 
 function ExtraForm({onSubmit}: Prop) {
     const [searchTerm, setSearchTerm] = useState<string>("");
