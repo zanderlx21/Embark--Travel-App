@@ -10,7 +10,7 @@ export function HotelResult({business, onAdd}:MainProp) {
 
     return (
 
-        <div className="Hotel-Result">
+        <div className="Component-Result">
             <img src={business.image_url} alt="image of Restaurant Lobby" />
             <p className="Business-Name-on-Card">{business.name}</p>
             <p className="Rating">{business.rating}</p>

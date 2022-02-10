@@ -1,17 +1,23 @@
 import { Business } from '../models/YelpModel';
-import IndoorResult from './IndoorResult';
+import OutdoorResult from './IndoorResult';
 
 export interface MainProp {
     businesses: Business[];
+    onAdd: (business: Business)=>void
 }
 
-function OutdoorResultsList({businesses}:MainProp) {
+function OutdoorResultsList({businesses, onAdd}:MainProp) {
     return (
-        <div className="Outdoors-List">
-            <h1>Parks & Rec</h1>
-            <h1>Indoor</h1>
+        <div className="Component-List" id="Outdoor-List">
+            
+            <h1>Outdoor Activities</h1>
+
+            <div className="Component-Map-Div">
+                
             {businesses.map( (business, i) => 
-            <IndoorResult key={i} business={business} />)}
+            <OutdoorResult key={i} business={business} onAdd={()=>onAdd(business)}/>)}
+            </div>
+
         </div>
     )
 }

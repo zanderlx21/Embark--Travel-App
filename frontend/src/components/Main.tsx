@@ -55,9 +55,10 @@ function Main() {
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>
-            {/* <FoodResultsList businesses={foodList} />
-            <IndoorResultsList businesses={indoorList}/>
-            <OutdoorResultsList businesses={outdoorList}/> */}
+            <FoodResultsList businesses={foodList} onAdd={addToItinerary} />
+            <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
+            
+            <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
 
         </div>
     )

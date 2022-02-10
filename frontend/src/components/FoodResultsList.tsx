@@ -4,18 +4,20 @@ import { Business } from '../models/YelpModel';
 
 export interface MainProp {
     businesses: Business[];
+    onAdd: (business: Business) => void;
 }
 
-function FoodResultsList({businesses}:MainProp) {
+function FoodResultsList({businesses, onAdd}:MainProp) {
 
 
     return (
 
-        <div className='Food-List'>
+        <div className='Component-List' id="Food-List">
             <h1>Restaurants</h1>
+        <div className="Component-Map-Div">
         {businesses.map( (business, i) => 
-        <FoodResult key={i} business={business} 
-        />)} 
+        <FoodResult key={i} business={business} onAdd={()=>onAdd(business)}/>)} 
+        </div>
         </div>
     )
 }
