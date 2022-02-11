@@ -2,19 +2,20 @@ import { Business } from "../models/YelpModel"
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { FoodResultExpanded } from "../components/FoodResultExpanded";
+import { postItineraryItem, deleteItineraryItem } from "../services/YelpAPIService";
+
 
 interface Prop {
     business: Business;
     onAdd: () => void;
     onDelete: () => void;
-    // hideButton: boolean;
 }
 
 export function FoodResult({business, onAdd, onDelete}:Prop) {
 
     let [ openExpanded, setOpenExpanded ] = useState(false);
-    let [ hideAddButton, setHideAddButton] = useState(false)
-
+    
+    let [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
     let [ hideTheAddButton, setHideTheAddButton] = useState(false)
     
 
@@ -26,7 +27,25 @@ export function FoodResult({business, onAdd, onDelete}:Prop) {
 //     }
 //     hideAddButton ? setHideAddButton(true) : setHideAddButton(false)
 //    }
-      
+
+function addToItinerary(business: Business){
+
+    postItineraryItem(business);
+    console.log(business);
+
+    setHideTheAddButton(true);
+    console.log(hideTheAddButton);
+}
+
+function deleteFromItinerary(business:Business) {
+    deleteItineraryItem(business);
+
+    let index = itineraryItems.findIndex(b => b._id === business._id);
+        setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
+
+    setHideTheAddButton(false)
+    console.log(hideTheAddButton)
+}
 
 
     
@@ -64,11 +83,14 @@ export function FoodResult({business, onAdd, onDelete}:Prop) {
 
             {/* <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button> */}
         <div id="Icon-Div"> 
-        {(!hideAddButton) ? 
-        <i className="material-icons" id="Add-to-list-Icon" onClick={onAdd}  title="Add to Itinerary" >playlist_add</i>
+        {(!hideTheAddButton) ? 
+        <i className="material-icons" id="Add-to-list-Icon" onClick={()=>addToItinerary}  title="Add to Itinerary" >playlist_add</i>
         :
-        <i className="material-icons" id="Add-to-list-Icon" onClick={onDelete} title="Remove to Itinerary" >playlist_remove</i>
-}                   
+
+        <i className="material-icons" id="Add-to-list-Icon" onClick={()=>deleteFromItinerary} title="Remove to Itinerary" >playlist_remove</i>
+}
+                       
+
                 
         </div>
 
