@@ -62,7 +62,6 @@ function Main() {
             <FoodResultsList businesses={foodList} onAdd={addToItinerary} />
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
-            
             <ExtraForm onSubmit={handleSubmitForm} />
             <Footer />
 

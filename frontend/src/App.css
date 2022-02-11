@@ -10,10 +10,6 @@
 
 html {
   height: -webkit-fill-available;
-
-  -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
 }
 
 body {
@@ -101,6 +97,7 @@ video {
 
 .Itinerary-List {
     position: fixed;
+    padding: 30px;
     right: 0;
     height: 100vh;
     width: 100%;
@@ -110,6 +107,7 @@ video {
     animation-duration: 2.5s;
     color: black;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     overflow-y: auto ;
@@ -124,7 +122,8 @@ padding-left: 100px;
 .Itinerary-Item {
     justify-content: center;
     border-bottom: 1px solid rgb(211, 211, 211);
-    width: 90%;
+    width: 100%;
+    padding-right: 20px;
 }
 
 .Itinerary-Item h1 {
@@ -315,21 +314,27 @@ video{
   height: 94vh;
   background-color: rgb(255, 255, 255);
   /* border: 2px solid yellow; */
-  /* overflow-x: scroll; */
-  /* overflow: auto; */
+  /* overflow-x: scroll;
+  overflow: auto; */
 }
 /* ^^^^^^^ */
 
+.Component-List h1{
+  font-size: 3rem;
+  padding-left: 15px;
+}
 
 
 .Component-Map-Div {
     /* border: 5px solid green; */
-    height: 94vh;
-    cursor: grab;
+    height: 87vh;
+    /* cursor: grab; */
     overflow-y: hidden;
     overflow-x: auto;
     display: flex;
-    align-items: center;
+    /* flex-grow: ;
+    flex-basis: 25%; */
+    align-items:center;
   }
   
   .Component-List:active,
@@ -375,16 +380,16 @@ video{
 
 #Add-to-List-Button{
     position: relative;
-    border-radius: 9px;
-    height: 35px;
-    width: 125px;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
     align-self: center;
     border: none;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(235, 235, 235);
 }
 
 #Add-to-List-Button:hover {
-    background-color: rgb(25, 199, 112);
+    background-color: rgb(230, 126, 28);
     transform: scale(1.03);
   transition: 100ms;
   color: white;
@@ -395,21 +400,39 @@ video{
   transform: scale(1);
 }
 
+#Add-to-list-Icon {
+  font-size: 2.7rem;
+  position: relative;
+}
+
+#Add-to-list-Icon:hover {
+  transition: 250ms;
+  color:rgb(230, 126, 28);
+  transform: scale(1.2);
+}
+
+#Icon-Div {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #Hotel-List {
   background-color: #1e4f63;
   color: white;
 }
 
 #Food-List {
-  background-color: #e05e5a;
+  background-color: rgb(233, 231, 207);
 }
 
 #Indoor-List {
-  background-color: #f6c177;
+  background-color: #333d75;
+  color: white;
 }
 
 #Outdoor-List {
-  background-color: #4bc286;
+  background-color: #637e6a;
+  color: white;
 }
 
 .Extra-Form-Container {
@@ -476,7 +499,9 @@ video{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 50vh;
+  color: white;
 }
 
 .Footer h1 {
@@ -504,6 +529,12 @@ animation: pulse 3s infinite
   100% {
     transform: scale(1);
   }
+}
+
+.Footer p {
+  padding-top: 200px;
+  font-size: small;
+  width: 70%;
 }
 /* ----------------------------------------760 SCREEN VIEW BELOW */
 @media screen and (min-width: 760px) {
@@ -586,13 +617,15 @@ animation: pulse 3s infinite
   #Search-Bar::placeholder {
     font-size: 1.07em
   }
-
+.Component-Map-Div{
+  height: 87vh;
+}
 }
 
 /* --------------------------Scrollbar styles-- */
 /* width */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 16px;
 }
 
 /* Track */
