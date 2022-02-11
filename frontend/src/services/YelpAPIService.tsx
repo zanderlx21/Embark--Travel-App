@@ -29,7 +29,7 @@ export const fetchIndoor = (query: string):Promise<YelpModel> => {
   return axios
     .get<YelpModel>((baseUrl), {
       params: { location: query, 
-      categories: "museums,aquariums,escapegames"}
+      categories: "museums,aquariums,galleries"}
     })
     .then( res => res.data)
 }
@@ -38,11 +38,57 @@ export const fetchOutdoor = (query: string):Promise<YelpModel> => {
   return axios
     .get<YelpModel>((baseUrl), {
       params: { location: query, 
-      categories: "parks,zoos"}
+      categories: "parks,zoos,beaches,boating,discgolf,fishing,paddleboarding,gardens,castles,boatcharters,bikerentals"}
     })
     .then( res => res.data)
 }
 
+export const fetchFitness = (query: string):Promise<YelpModel> => {
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: "fitness,yoga,gyms,meditationcenters"}
+    })
+    .then( res => res.data)
+}
+
+export const fetchRelaxation = (query: string):Promise<YelpModel> => {
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: "spa,massage,hotsprings"}
+    })
+    .then( res => res.data)
+}
+
+export const fetchAdventure = (query: string):Promise<YelpModel> => {
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: "hiking,canyoneering,climbing,hot_air_balloons,mountainbiking,paragliding,parasailing,rafting,rock_climbing,skydiving,zipline,snorkeling,surfing,tubing,jetskis,atvrentals,skiing"}
+    })
+    .then( res => res.data)
+}
+export const fetchFamily = (query: string):Promise<YelpModel> => {
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: "indoor_playcenter,kids_activities,lasertag,mini_golf,playgrounds,scavengerhunts,swimmingpools,trampoline,waterparks,zipline,bikerentals,virtualrealitycenters,amusementparks,escapegames"}
+    })
+    .then( res => res.data)
+}
+
+export const fetchNightlife = (query: string):Promise<YelpModel> => {
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: "bars,musicvenues,theater,lounges,barcrawl,beergardens,karaoke,pianobars,poolhalls,casinos,jazzandblues"}
+    })
+    .then( res => res.data)
+}
+
+
+// for user entry at bottom of page
 export const fetchCategory = (query: string):Promise<YelpModel> => {
   return axios
     .get<YelpModel>((baseUrl), {
