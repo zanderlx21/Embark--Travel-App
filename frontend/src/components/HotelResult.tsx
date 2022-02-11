@@ -1,5 +1,5 @@
 import { Business } from "../models/YelpModel"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {HotelResultExpanded} from "../components/HotelResultExpanded";
 import Modal from 'react-modal';
 
@@ -30,7 +30,9 @@ export function HotelResult({business, onAdd}:MainProp) {
       },
     };
 
-    // Modal.setAppElement('#Modal_Result');
+    // useEffect(() => {
+    //     Modal.setAppElement('#Modal_Result');
+    // });
 
     return (
 
@@ -41,7 +43,7 @@ export function HotelResult({business, onAdd}:MainProp) {
         <p className="Price">{business.price}</p>
 
         <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
-        <div className="Modal-Result">
+        <div id="Modal-Result">
         {openExpanded && 
 
         <Modal

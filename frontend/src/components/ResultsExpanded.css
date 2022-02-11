@@ -1,5 +1,4 @@
 .Results-Expanded {
-
         display: flex;
         width: 70vw;
         height: 85vh;
@@ -26,8 +25,3 @@
 .Expanded-Result-Content {
     margin-left: 20px;
 }
-
-/* #Add-to-List-Button {
-    margin: 5px;
-} */
-

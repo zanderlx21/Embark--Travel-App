@@ -51,25 +51,29 @@ export function FoodResult({business, onAdd, onDelete}:Prop) {
       },
     };
 
+        // useEffect(() => {
+    //     Modal.setAppElement('#Modal_Result');
+    // });
+
     return (
         <div className="Component-Result">
             <img src={business.image_url} onClick={openModal} alt="image of Restaurant Lobby" />
             <p className="Business-Name-on-Card">{business.name}</p>
             <p className="Rating">{business.rating}</p>
             <p className="Price">{business.price}</p>
+
             {/* <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button> */}
         <div id="Icon-Div"> 
         {(!hideAddButton) ? 
         <i className="material-icons" id="Add-to-list-Icon" onClick={onAdd}  title="Add to Itinerary" >playlist_add</i>
         :
         <i className="material-icons" id="Add-to-list-Icon" onClick={onDelete} title="Remove to Itinerary" >playlist_remove</i>
-}
-                       
+}                   
                 
         </div>
-            {/* <i className="material-icons" id="Add-to-list-Icon" onClick={onAdd} >add_to_photos</i> */}
-            
-            <div className="Modal-Result">
+
+            <div id="Modal-Result">
+
         {openExpanded && 
 
         <Modal
