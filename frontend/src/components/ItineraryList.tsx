@@ -15,7 +15,7 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
             setItineraryItems(data);
         });
     },[]);
-    // console.log(itineraryItems)
+
 
     function deleteFromItinerary(business:Business) {
         deleteItineraryItem(business);

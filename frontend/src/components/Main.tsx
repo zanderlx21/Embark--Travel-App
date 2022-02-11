@@ -86,7 +86,10 @@ function Main() {
             <AboutLocation searchTerm={searchTerm}/>
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>
 
-            <FoodResultsList businesses={foodList} onAdd={addToItinerary} onDelete={deleteFromItinerary} hideButton={hideAddButton} />
+            <FoodResultsList businesses={foodList} onAdd={addToItinerary}  
+            // onDelete={deleteFromItinerary} 
+            // hideButton={hideAddButton} 
+            />
 
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
