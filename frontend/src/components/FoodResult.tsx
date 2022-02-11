@@ -41,8 +41,12 @@ export function FoodResult({business, onAdd}:Prop) {
             <p className="Rating">{business.rating}</p>
             <p className="Price">{business.price}</p>
 
-            <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+        <div id="Icon-Div">            
+                <i className="material-icons" id="Add-to-list-Icon" onClick={onAdd} >add_to_photos</i>
+        </div>
+
             <div id="Modal-Result">
+
         {openExpanded && 
 
         <Modal

@@ -1,11 +1,16 @@
 
 .H2-Itinerary-List {
     margin: 10px;
+    text-align: center;
+    
+    
 }
 
 .Itinerary-List-Name {
-    display: inline-block;
+    display: block;
     font-family: Playfair Display;
+    font-size: 3rem;
+
 
 }
 
