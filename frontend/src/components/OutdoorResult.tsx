@@ -30,6 +30,10 @@ function OutdoorResult({business, onAdd}:Prop) {
       },
     };
 
+        // useEffect(() => {
+    //     Modal.setAppElement('#Modal_Result');
+    // });
+
     return (
 
         <div className="Component-Result" id="Outdoor-Result">
@@ -40,7 +44,7 @@ function OutdoorResult({business, onAdd}:Prop) {
 
             <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
 
-            <div className="Modal-Result">
+            <div id="Modal-Result">
             {openExpanded && 
 
             <Modal
