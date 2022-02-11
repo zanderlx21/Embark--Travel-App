@@ -98,7 +98,6 @@ export function FoodResult({business, onAdd, onDelete}:Prop) {
         {(!hideTheAddButton) ? 
         <i className="material-icons" id="Add-to-list-Icon" onClick={handleAdd}  title="Add to Itinerary" >playlist_add</i>
         :
-
         <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
 }
                        
