@@ -30,7 +30,6 @@ function Main() {
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
     const [ hideAddButton, setHideAddButton ] = useState(false)
-
     const [ searchCategory, setSearchCategory ] = useState<string>("");
     const[ categoryResults, setCategoryResults ] = useState<Business[]>([]);
 
@@ -85,9 +84,7 @@ function Main() {
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>
-
             <FoodResultsList businesses={foodList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
-
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
             <ExtraForm onSubmit={handleSubmitForm} />

@@ -16,7 +16,6 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
         });
     },[]);
 
-
     function deleteFromItinerary(business:Business) {
         deleteItineraryItem(business);
 
