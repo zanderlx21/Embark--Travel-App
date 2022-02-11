@@ -1,16 +1,35 @@
 import { Business } from "../models/YelpModel"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { FoodResultExpanded } from "../components/FoodResultExpanded";
 
 interface Prop {
     business: Business;
-    onAdd: ()=>void;
+    onAdd: () => void;
+    onDelete: () => void;
+    // hideButton: boolean;
 }
 
-export function FoodResult({business, onAdd}:Prop) {
+export function FoodResult({business, onAdd, onDelete}:Prop) {
 
     let [ openExpanded, setOpenExpanded ] = useState(false);
+    let [ hideAddButton, setHideAddButton] = useState(false)
+
+    let [ hideTheAddButton, setHideTheAddButton] = useState(false)
+    
+
+//    function ClickHandler () {
+//     if(hideAddButton){
+//         onDelete()
+//     } if (!hideAddButton){
+//         onAdd()
+//     }
+//     hideAddButton ? setHideAddButton(true) : setHideAddButton(false)
+//    }
+      
+
+
+    
   
     function openModal() {
         setOpenExpanded(true);
@@ -18,6 +37,8 @@ export function FoodResult({business, onAdd}:Prop) {
     function closeModal() {
         setOpenExpanded(false);
     }
+
+
   
     const customStyles = {
       content: {
@@ -37,10 +58,17 @@ export function FoodResult({business, onAdd}:Prop) {
             <p className="Rating">{business.rating}</p>
             <p className="Price">{business.price}</p>
             {/* <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button> */}
-        <div id="Icon-Div">            
-                <i className="material-icons" id="Add-to-list-Icon" onClick={onAdd} >add_to_photos</i>
+        <div id="Icon-Div"> 
+        {(!hideAddButton) ? 
+        <i className="material-icons" id="Add-to-list-Icon" onClick={onAdd}  title="Add to Itinerary" >playlist_add</i>
+        :
+        <i className="material-icons" id="Add-to-list-Icon" onClick={onDelete} title="Remove to Itinerary" >playlist_remove</i>
+}
+                       
+                
         </div>
             {/* <i className="material-icons" id="Add-to-list-Icon" onClick={onAdd} >add_to_photos</i> */}
+            
             <div className="Modal-Result">
         {openExpanded && 
 

@@ -28,6 +28,8 @@ function Main() {
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
+    const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
+    const [ hideAddButton, setHideAddButton ] = useState(false)
 
     useEffect( () => {
         if(searchTerm) 
@@ -44,9 +46,25 @@ function Main() {
         setSearchTerm(searchTerm)
     }
 
+    //Add Items to Itinerary
     function addToItinerary(business: Business){
+
         postItineraryItem(business);
         console.log(business);
+
+        setHideAddButton(true)
+        console.log(hideAddButton)
+    }
+
+    //Delete Items from Itinerary
+    function deleteFromItinerary(business:Business) {
+        deleteItineraryItem(business);
+
+        let index = itineraryItems.findIndex(b => b._id === business._id);
+            setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
+
+        setHideAddButton(false)
+        console.log(hideAddButton)
     }
 
     return (
@@ -59,7 +77,9 @@ function Main() {
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>
-            <FoodResultsList businesses={foodList} onAdd={addToItinerary} />
+
+            <FoodResultsList businesses={foodList} onAdd={addToItinerary} onDelete={deleteFromItinerary} hideButton={hideAddButton} />
+
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
             <ExtraForm onSubmit={handleSubmitForm} />
