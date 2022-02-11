@@ -3,7 +3,6 @@ import { SearchTermProp } from './Main';
 
 function AboutLocation({searchTerm}:SearchTermProp) {
 
-    
     return (
         <div className='About-Location'>
             <h3>Destination</h3>

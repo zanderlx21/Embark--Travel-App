@@ -16,6 +16,7 @@ import { ItineraryList } from './ItineraryList';
 import { HotelResultExpanded } from './HotelResultExpanded';
 import ExtraForm from './ExtraForm';
 import Footer from './Footer';
+import { ExtraFormResultsList } from './ExtraFormResultsList';
 
 export interface SearchTermProp {
     searchTerm: string;
@@ -88,6 +89,7 @@ function Main() {
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
             <ExtraForm onSubmit={handleSubmitForm} />
+            <ExtraFormResultsList businesses={categoryResults} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <Footer />
 
         </div>
