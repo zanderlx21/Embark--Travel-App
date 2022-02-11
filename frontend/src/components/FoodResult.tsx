@@ -30,6 +30,10 @@ export function FoodResult({business, onAdd}:Prop) {
       },
     };
 
+        // useEffect(() => {
+    //     Modal.setAppElement('#Modal_Result');
+    // });
+
     return (
         <div className="Component-Result">
             <img src={business.image_url} onClick={openModal} alt="image of Restaurant Lobby" />
@@ -38,7 +42,7 @@ export function FoodResult({business, onAdd}:Prop) {
             <p className="Price">{business.price}</p>
 
             <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
-            <div className="Modal-Result">
+            <div id="Modal-Result">
         {openExpanded && 
 
         <Modal
