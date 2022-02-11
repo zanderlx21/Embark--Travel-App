@@ -6,10 +6,9 @@ export interface MainProp {
     businesses: Business[];
     onAdd: (business: Business) => void;
     onDelete: (business: Business) => void;
-    hideButton: boolean;
 }
 
-function FoodResultsList({businesses, onAdd, onDelete, hideButton}:MainProp) {
+function FoodResultsList({businesses, onAdd, onDelete}:MainProp) {
 
 
     return (
