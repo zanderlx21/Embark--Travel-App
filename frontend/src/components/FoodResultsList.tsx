@@ -5,9 +5,11 @@ import { Business } from '../models/YelpModel';
 export interface MainProp {
     businesses: Business[];
     onAdd: (business: Business) => void;
+    onDelete: (business: Business) => void;
+    hideButton: boolean;
 }
 
-function FoodResultsList({businesses, onAdd}:MainProp) {
+function FoodResultsList({businesses, onAdd, onDelete, hideButton}:MainProp) {
 
 
     return (
@@ -16,7 +18,7 @@ function FoodResultsList({businesses, onAdd}:MainProp) {
             <h1>Restaurants</h1>
         <div className="Component-Map-Div">
         {businesses.map( (business, i) => 
-        <FoodResult key={i} business={business} onAdd={()=>onAdd(business)}/>)} 
+        <FoodResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)} 
         </div>
         </div>
     )
