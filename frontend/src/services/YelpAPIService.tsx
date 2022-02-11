@@ -43,6 +43,14 @@ export const fetchOutdoor = (query: string):Promise<YelpModel> => {
     .then( res => res.data)
 }
 
+export const fetchCategory = (query: string):Promise<YelpModel> => {
+  return axios
+    .get<YelpModel>((baseUrl), {
+      params: { location: query, 
+      categories: query}
+    })
+    .then( res => res.data)
+}
 
 /// DATABASE
 

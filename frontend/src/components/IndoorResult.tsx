@@ -29,6 +29,9 @@ function IndoorResult({business, onAdd}:Prop) {
         transform: 'translate(-50%, -50%)',
       },
     };
+        // useEffect(() => {
+    //     Modal.setAppElement('#Modal_Result');
+    // });
 
     return (
 
@@ -40,7 +43,7 @@ function IndoorResult({business, onAdd}:Prop) {
 
             <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
 
-            <div className="Modal-Result">
+            <div id="Modal-Result">
         {openExpanded && 
 
         <Modal
