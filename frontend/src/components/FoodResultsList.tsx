@@ -16,8 +16,10 @@ function FoodResultsList({businesses, onAdd, onDelete}:MainProp) {
         <div className='Component-List' id="Food-List">
             <h1>Restaurants</h1>
         <div className="Component-Map-Div">
+            
         {businesses.map( (business, i) => 
         <FoodResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)} 
+
         </div>
         </div>
     )

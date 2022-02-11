@@ -4,7 +4,7 @@ import "./ResultsExpanded.css";
 
 interface MainProp {
     business: Business;
-    onAdd: (business:Business)=>void;
+    onAdd: ()=>void;
     onClose: ()=>void;
 }
 
@@ -25,7 +25,7 @@ export function HotelResultExpanded({business, onAdd, onClose}:MainProp) {
             <p>Category: {business.categories.map((category, i) => <li key={i}> {category.title}/</li> )}</p>
             <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
             </div>
-            <button id="Add-to-List-Button" onClick={()=>onAdd} >Add to Itinerary</button>
+            <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
         </div>
     )
 }
