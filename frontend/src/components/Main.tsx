@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { deleteItineraryItem, fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, 
-    fetchOutdoor, postItineraryItem } from '../services/YelpAPIService';
+    fetchOutdoor, postItineraryItem, fetchCategory } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import Header from './Header';
@@ -29,6 +29,9 @@ function Main() {
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
 
+    const [ searchCategory, setSearchCategory ] = useState<string>("");
+    const[ categoryResults, setCategoryResults ] = useState<Business[]>([]);
+
     useEffect( () => {
         if(searchTerm) 
         fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
@@ -37,12 +40,18 @@ function Main() {
         if(searchTerm) 
         fetchIndoor(searchTerm).then((data) => setIndoorList(data.businesses)) 
         if(searchTerm) 
-        fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses)) 
+        fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses))
     }, [searchTerm]);
             
     const handleSubmitForm = (searchTerm: string) => {
         setSearchTerm(searchTerm)
     }
+
+    // for user category search
+    useEffect( () => {
+        if(searchCategory) 
+        fetchCategory(searchCategory).then((data) => setCategoryResults(data.businesses))
+    }, []);
 
     function addToItinerary(business: Business){
         postItineraryItem(business);
