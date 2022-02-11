@@ -84,11 +84,9 @@ let [ openExpanded, setOpenExpanded ] = useState(false);
         </Modal>
 
         }       
-        
         </div>
         </div>
     )
 }
-
 
 export default ExtraFormResult
