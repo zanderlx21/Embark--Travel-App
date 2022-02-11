@@ -18,6 +18,18 @@ export function FoodResult({business, onAdd, onDelete}:Prop) {
     let [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
     let [ hideTheAddButton, setHideTheAddButton] = useState(false)
     
+    function handleAdd() {
+        setHideTheAddButton(true);
+        console.log(hideTheAddButton)
+        onAdd();
+      }
+
+      function handleDelete() {
+        setHideTheAddButton(false);
+        console.log(hideTheAddButton)
+        onDelete();
+      }
+
 
 //    function ClickHandler () {
 //     if(hideAddButton){
@@ -28,24 +40,24 @@ export function FoodResult({business, onAdd, onDelete}:Prop) {
 //     hideAddButton ? setHideAddButton(true) : setHideAddButton(false)
 //    }
 
-function addToItinerary(business: Business){
+// function addToItinerary(business: Business){
 
-    postItineraryItem(business);
-    console.log(business);
+//     postItineraryItem(business);
+//     console.log(business);
 
-    setHideTheAddButton(true);
-    console.log(hideTheAddButton);
-}
+//     setHideTheAddButton(true);
+//     console.log(hideTheAddButton);
+// }
 
-function deleteFromItinerary(business:Business) {
-    deleteItineraryItem(business);
+// function deleteFromItinerary(business:Business) {
+//     deleteItineraryItem(business);
 
-    let index = itineraryItems.findIndex(b => b._id === business._id);
-        setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
+//     let index = itineraryItems.findIndex(b => b._id === business._id);
+//         setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
 
-    setHideTheAddButton(false)
-    console.log(hideTheAddButton)
-}
+//     setHideTheAddButton(false)
+//     console.log(hideTheAddButton)
+// }
 
 
     
@@ -84,10 +96,10 @@ function deleteFromItinerary(business:Business) {
             {/* <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button> */}
         <div id="Icon-Div"> 
         {(!hideTheAddButton) ? 
-        <i className="material-icons" id="Add-to-list-Icon" onClick={()=>addToItinerary}  title="Add to Itinerary" >playlist_add</i>
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleAdd}  title="Add to Itinerary" >playlist_add</i>
         :
 
-        <i className="material-icons" id="Add-to-list-Icon" onClick={()=>deleteFromItinerary} title="Remove to Itinerary" >playlist_remove</i>
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
 }
                        
 
