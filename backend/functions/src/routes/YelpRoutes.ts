@@ -98,23 +98,38 @@ yelpRoutes.get("/search", async (req, res) => {
             console.log(json9)
             res.json(json9);
         }
-
-            // else {
-            //     let fetch_response11 = await fetch(api_url + categories, {
-            //         headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
-            //     });
-            
-            //     let json11 = await fetch_response11.json();
-            //     console.log(json11)
-            //     res.json(json11);
-            //     }
-
-            }
-
-    
-    catch (e){
-        console.error("ERROR", e);
-        res.status(500).json({message: "Internal Service Error"});
     }
-});
+        catch (e){
+            console.error("ERROR", e);
+            res.status(500).json({message: "Internal Service Error"});
+        }
+    });
+
+
+yelpRoutes.get("/usersearch", async (req, res) => {
+
+            let location: string = (req.query.location as string).toLowerCase();
+            let category:string = (req.query.categories as string).toLowerCase();
+            
+
+            try {
+            const api_url = `https://api.yelp.com/v3/businesses/search?location=${location}`;
+
+
+            let fetch_response10 = await fetch(api_url + "&categories=" + category, {
+                    headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                });
+                let json10 = await fetch_response10.json();
+                console.log(fetch_response10)
+                console.log(json10)
+                res.json(json10);
+                }
+            
+            catch (e){
+                console.error("ERROR", e);
+                res.status(500).json({message: "Internal Service Error"});
+            }
+        });
+    
+
 

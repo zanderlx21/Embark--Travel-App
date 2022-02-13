@@ -1,4 +1,3 @@
-import React from 'react'
 import { Business } from '../models/YelpModel';
 import "./ExtraFormResultsList.css"
 import ExtraFormResult from '../components/ExtraFormResult';

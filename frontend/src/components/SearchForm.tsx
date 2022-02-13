@@ -6,7 +6,6 @@ interface Prop {
 }
         
 function SearchForm({onSubmit}: Prop) {
-    const[ businessList, setBusinessList ] = useState<Business[]>([])
     const [searchTerm, setSearchTerm] = useState<string>("");
   
       function onFormSubmit (e: FormEvent) {
