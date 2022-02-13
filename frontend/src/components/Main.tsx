@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { deleteItineraryItem, fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, 
-    fetchOutdoor, postItineraryItem, fetchCategory } from '../services/YelpAPIService';
+    fetchOutdoor, postItineraryItem, fetchCategory, fetchFitness, fetchRelaxation, fetchAdventure, fetchFamily, fetchNightlife } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import Header from './Header';
@@ -8,6 +8,11 @@ import AboutLocation from './AboutLocation';
 import HotelResultsList from './HotelResultsList';
 import FoodResultsList from './FoodResultsList';
 import OutdoorResultsList from './OutdoorsResultsList';
+import FitnessResultsList from './FitnessResultsList';
+import RelaxationResultsList from './RelaxationResultsList';
+import AdventureResultsList from './AdventueResultsList';
+import FamilyResultsList from './FamilyResultsList';
+import NightLifeResultsList from './NIghtLifeResultsList';
 // @ts-ignore
 import videoBG from './video/video-BG.mp4'
 //
@@ -29,6 +34,11 @@ function Main() {
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
     const[ outdoorList, setOutdoorList ] = useState<Business[]>([]);
+    const[ fitnessList, setFitnessList ] = useState<Business[]>([]);
+    const[ relaxationList, setRelaxationList ] = useState<Business[]>([]);
+    const[ adventureList, setAdventureList ] = useState<Business[]>([]);
+    const[ familyList, setFamilyList ] = useState<Business[]>([]);
+    const[ nightLifeList, setNightLifeList ] = useState<Business[]>([]);
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
     const [ hideAddButton, setHideAddButton ] = useState(false)
     const [ searchCategory, setSearchCategory ] = useState<string>("");
@@ -43,6 +53,17 @@ function Main() {
         fetchIndoor(searchTerm).then((data) => setIndoorList(data.businesses)) 
         if(searchTerm) 
         fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses))
+        if(searchTerm) 
+        fetchFitness(searchTerm).then((data) => setFitnessList(data.businesses))
+        if(searchTerm) 
+        fetchRelaxation(searchTerm).then((data) => setRelaxationList(data.businesses))
+        if(searchTerm) 
+        fetchAdventure(searchTerm).then((data) => setAdventureList(data.businesses))
+        if(searchTerm) 
+        fetchFamily(searchTerm).then((data) => setFamilyList(data.businesses))
+        if(searchTerm) 
+        fetchNightlife(searchTerm).then((data) => setNightLifeList(data.businesses))
+
     }, [searchTerm]);
             
     const handleSubmitForm = (searchTerm: string) => {
@@ -88,6 +109,11 @@ function Main() {
             <FoodResultsList businesses={foodList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
+            <AdventureResultsList businesses={adventureList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
+            <FamilyResultsList businesses={familyList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
+            <NightLifeResultsList businesses={nightLifeList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
+            <RelaxationResultsList businesses={relaxationList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
+            <FitnessResultsList businesses={fitnessList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <ExtraForm onSubmit={handleSubmitForm} />
             <ExtraFormResultsList businesses={categoryResults} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <Footer />
