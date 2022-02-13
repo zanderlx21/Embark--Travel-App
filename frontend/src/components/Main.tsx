@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, FormEvent} from 'react'
 import { deleteItineraryItem, fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, 
     fetchOutdoor, postItineraryItem, fetchCategory, fetchFitness, fetchRelaxation, fetchAdventure, fetchFamily, fetchNightlife } from '../services/YelpAPIService';
 import { Business } from '../models/YelpModel';
@@ -28,8 +28,7 @@ export interface SearchTermProp {
 }
 
 function Main() {
-    // const [location, setLocation] = useState("")
-    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
+    const [searchTerm, setSearchTerm] = useState<string>('Detroit');
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
@@ -41,8 +40,6 @@ function Main() {
     const[ nightLifeList, setNightLifeList ] = useState<Business[]>([]);
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
     const [ hideAddButton, setHideAddButton ] = useState(false)
-    const [ searchCategory, setSearchCategory ] = useState<string>("");
-    const[ categoryResults, setCategoryResults ] = useState<Business[]>([]);
 
     useEffect( () => {
         if(searchTerm) 
@@ -70,12 +67,6 @@ function Main() {
         setSearchTerm(searchTerm)
     }
 
-    // for user category search
-    useEffect( () => {
-        if(searchCategory) 
-        fetchCategory(searchCategory).then((data) => setCategoryResults(data.businesses))
-    }, []);
-
     function addToItinerary(business: Business){
 
         postItineraryItem(business);
@@ -96,6 +87,23 @@ function Main() {
         console.log(hideAddButton)
     }
 
+    /////// USER SEARCH /////////
+    const [searchCity, setSearchCity] = useState<string>("");
+    const [searchCategory, setSearchCategory] = useState<string>("");
+    const[ categoryList, setCategoryList ] = useState<Business[]>([]);
+
+    useEffect(() => {
+        if(searchCity && searchCategory) 
+        fetchCategory(searchCity,searchCategory).then((data) => setCategoryList(data.businesses))
+    }, [searchCity, searchCategory]);
+
+    function onUserSubmit (searchCity:string, searchCategory:string) {
+        setSearchCity(searchCity);
+        setSearchCategory(searchCategory);
+        
+    }
+    console.log(searchCategory, searchCity)
+  
     return (
         <div className="Main">
             <video autoPlay loop muted>
@@ -114,8 +122,9 @@ function Main() {
             <NightLifeResultsList businesses={nightLifeList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <RelaxationResultsList businesses={relaxationList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <FitnessResultsList businesses={fitnessList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
-            <ExtraForm onSubmit={handleSubmitForm} />
-            <ExtraFormResultsList businesses={categoryResults} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
+            
+            <ExtraForm onSubmit={onUserSubmit} />
+            <ExtraFormResultsList businesses={categoryList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <Footer />
 
         </div>

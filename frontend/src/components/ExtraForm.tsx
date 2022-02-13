@@ -1,16 +1,22 @@
-import { useState, FormEvent } from 'react' 
+import { useState, FormEvent, useEffect } from 'react' 
+import { fetchCategory } from '../services/YelpAPIService';
+import { Business } from '../models/YelpModel';
 
 interface Prop {
-    onSubmit: (searchTerm: string) => void;
+    onSubmit: (searchCity:string, searchCategory:string) => void;
 }
 
-function ExtraForm({onSubmit}: Prop) {
-    const [searchTerm, setSearchTerm] = useState<string>("");
-  
+function ExtraForm({onSubmit}:Prop) {
+
+    const [searchCity, setSearchCity] = useState<string>("");
+    const [searchCategory, setSearchCategory] = useState<string>("");
+    
     function onFormSubmit (e: FormEvent) {
-      e.preventDefault();
-      console.log(searchTerm);
-      onSubmit(searchTerm);
+
+        e.preventDefault();
+        onSubmit(searchCity, searchCategory)
+        console.log(searchCity)
+        console.log(searchCategory);
     }
 
     return (
@@ -18,7 +24,12 @@ function ExtraForm({onSubmit}: Prop) {
             <div className="Extra-Form-Div">
             <h1>Looking for more?</h1>
                 <form onSubmit={onFormSubmit}>
-                    <input type="text" name="activity" id="Extra-Search-Bar" placeholder="Ex: Yoga, Market, Grocery, Spa" onChange={(e) => setSearchTerm(e.target.value)} ></input>
+                    <input type="text" name="city" id="Extra-Search-Bar" placeholder="City Name" 
+                    onChange={(e) => setSearchCity(e.target.value)} 
+                    ></input>
+                    <input type="text" name="activity" id="Extra-Search-Bar" placeholder="Ex: Yoga, Market, Grocery, Spa" 
+                    onChange={(e) => setSearchCategory(e.target.value)} 
+                    ></input>
                     <button type="submit" id="Extra-Search-Button">Search</button>
                 </form>
             </div>

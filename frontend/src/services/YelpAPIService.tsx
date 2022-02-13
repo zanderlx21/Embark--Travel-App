@@ -88,12 +88,15 @@ export const fetchNightlife = (query: string):Promise<YelpModel> => {
 }
 
 
-// for user entry at bottom of page
-export const fetchCategory = (query: string):Promise<YelpModel> => {
+// EXTRA FORM for user entry at bottom of page, location already set by user, params = user entry
+const baseUrlSetLocation = "http://localhost:5001/travelapp-f2d81/us-central1/api/usersearch"
+
+export const fetchCategory = (query: string, query2: string):Promise<YelpModel> => {
   return axios
-    .get<YelpModel>((baseUrl), {
+    .get<YelpModel>((baseUrlSetLocation), {
       params: { location: query, 
-      categories: query}
+      categories: query2
+    }
     })
     .then( res => res.data)
 }
