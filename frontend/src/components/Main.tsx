@@ -116,9 +116,7 @@ function Main() {
             <FoodResultsList businesses={foodList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
 
-
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
-
 
             <AdventureResultsList businesses={adventureList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <FamilyResultsList businesses={familyList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
@@ -126,7 +124,7 @@ function Main() {
             <RelaxationResultsList businesses={relaxationList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <FitnessResultsList businesses={fitnessList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             
-            <ExtraForm onSubmit={onUserSubmit} />
+            <ExtraForm onSubmit={onUserSubmit} topSearch={searchTerm}/>
             <ExtraFormResultsList businesses={categoryList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <Footer />
 

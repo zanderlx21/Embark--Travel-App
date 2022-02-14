@@ -13,7 +13,6 @@ export interface Business {
     is_closed: boolean,
     location: 
         {display_address: string}
-    
     display_phone: string,
     url: string
     categories: [

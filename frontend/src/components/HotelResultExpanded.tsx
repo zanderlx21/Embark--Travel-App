@@ -1,6 +1,8 @@
 import {Business} from "../models/YelpModel";
 import Modal from "react-modal";
 import "./ResultsExpanded.css";
+import { useState } from "react";
+
 
 interface MainProp {
     business: Business;
@@ -9,6 +11,14 @@ interface MainProp {
 }
 
 export function HotelResultExpanded({business, onAdd, onClose}:MainProp) {
+
+    const [disable, setDisable] = useState(false);
+
+    function clickButtonDisable() {
+        onAdd();
+        setDisable(true)
+    }
+
     return (
         <div className="Results-Expanded">
             <p className="Close"><i className="material-icons" onClick={onClose}>close</i></p>
@@ -23,9 +33,10 @@ export function HotelResultExpanded({business, onAdd, onClose}:MainProp) {
             <p>Phone: {business.display_phone}</p>
             <p>Address: {business.location.display_address}</p>
             <p>Category: {business.categories.map((category, i) => <li key={i}> {category.title}/</li> )}</p>
-            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+            <p><a href={business.url} target="_blank">Link to Yelpsssss</a></p> 
+
             </div>
-            <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+            <button id="Add-to-List-Button" disabled={disable} onClick={clickButtonDisable} >Add to Itinerary</button>
         </div>
     )
 }

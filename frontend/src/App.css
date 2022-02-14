@@ -384,9 +384,9 @@ video{
 
 #Add-to-List-Button{
     position: relative;
-    border-radius: 50%;
-    height: 75px;
-    width: 75px;
+    border-radius: 15px;
+    height: 50px;
+    width: 275px;
     align-self: center;
     border: none;
     background-color: rgb(235, 235, 235);
@@ -400,14 +400,14 @@ video{
 }
 
 #Add-to-List-Button:active {
-  background-color: rgb(230, 126, 28);
+  background-color: rgb(202, 100, 4);
   transform: scale(1);
 }
 
 #Add-to-list-Icon {
   font-size: 2.7rem;
   position: relative;
-}
+}git 
 
 #Add-to-list-Icon:hover {
   transition: 250ms;

@@ -1,13 +1,29 @@
 import {Business} from "../models/YelpModel";
+import { useState } from "react";
 import "./ResultsExpanded.css";
 
 interface MainProp {
     business: Business;
     onAdd: ()=>void;
     onClose: ()=>void;
+    onDelete: () => void;
 }
 
-export function NightLifeResultExpanded({business, onAdd, onClose}:MainProp) {
+export function NightLifeResultExpanded({business, onAdd, onClose, onDelete}:MainProp) {
+
+    let [ hideTheAddButton, setHideTheAddButton] = useState(false)
+    
+    function handleAdd() {
+        setHideTheAddButton(true);
+        console.log(hideTheAddButton)
+        onAdd();
+      }
+
+      function handleDelete() {
+        setHideTheAddButton(false);
+        console.log(hideTheAddButton)
+        onDelete();
+      }
     return (
         <div className="Results-Expanded">
             <p className="Close"><i className="material-icons" onClick={onClose}>close</i></p>
@@ -24,7 +40,15 @@ export function NightLifeResultExpanded({business, onAdd, onClose}:MainProp) {
             <p>Category: {business.categories.map((category, i) => <li key={i}> {category.title}/</li> )}</p>
             <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
             </div>
-            <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+
+            <div id="Add-To-List"> 
+        {(!hideTheAddButton) ? 
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleAdd}  title="Add to Itinerary" >playlist_add</i>
+        :
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
+}             
+                
+        </div>
         </div>
     )
 }
