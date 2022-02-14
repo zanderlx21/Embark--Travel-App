@@ -1,6 +1,5 @@
 import { FoodResult } from './FoodResult';
 import { Business } from '../models/YelpModel';
-// import { ItineraryPost } from '../models/ItineraryPost';
 
 export interface MainProp {
     businesses: Business[];
@@ -9,12 +8,11 @@ export interface MainProp {
 }
 
 function FoodResultsList({businesses, onAdd, onDelete}:MainProp) {
-
-
     return (
 
         <div className='Component-List' id="Food-List">
             <h1>Restaurants</h1>
+
         <div className="Component-Map-Div">
             
         {businesses.map( (business, i) => 

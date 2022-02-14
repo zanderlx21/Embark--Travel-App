@@ -101,7 +101,7 @@ export const fetchCategory = (query: string, query2: string):Promise<YelpModel> 
     .then( res => res.data)
 }
 
-/// DATABASE
+/// Calling the DATABASE on the Frontend
 
 export const fetchItineraryList = ():Promise<Business[]> => {
   return axios
