@@ -10,7 +10,7 @@ export function ItineraryItem({business, onDelete}:Props) {
 
     return (
         <div className="Itinerary-Item">
-            <h3>{business.name}</h3>
+            <h3>{business.name} | {business.location.city}</h3>
 
             <div className="Outer-Item-Div">
 

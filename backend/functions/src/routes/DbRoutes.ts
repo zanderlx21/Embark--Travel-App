@@ -9,7 +9,7 @@ export const dbRoutes = express.Router();
 dbRoutes.get("/", async (req, res) => {
     try {
         const client = await getClient();
-        const results = await client.db().collection<Business>("itinerary").find().toArray();
+        const results = await client.db().collection<Business>("itinerary").find().sort({"location.city": 1}).toArray();
         console.log(results);
         res.json(results);
     } catch (err) {

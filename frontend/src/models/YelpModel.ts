@@ -11,11 +11,15 @@ export interface Business {
     rating: number,
     price: string,
     is_closed: boolean,
-    location: 
-        {display_address: string}
+    location: {
+        display_address: string,
+        city: string
+        },
     display_phone: string,
     url: string
     categories: [
         {title: string}
     ]
 }
+
+// mongo sort by city command: db.itinerary.find().sort({"location.city": 1})

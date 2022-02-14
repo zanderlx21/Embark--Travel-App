@@ -115,7 +115,6 @@ yelpRoutes.get("/usersearch", async (req, res) => {
             try {
             const api_url = `https://api.yelp.com/v3/businesses/search?location=${location}`;
 
-
             let fetch_response10 = await fetch(api_url + "&categories=" + category, {
                     headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
                 });
