@@ -139,7 +139,7 @@ float: right;
 .Form-Container {
   height: 100vh;
   width: 100vw;
-  display: block;
+  /* display: block; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,6 +181,17 @@ form {
   animation: enter 1.75s calc(1) cubic-bezier(0.62, 0.2, 0.38, 1.14);
 }
 
+@keyframes enter {
+  from {
+    transform: scale(1.08);
+  opacity: 0;
+  }
+  to {
+   opacity: 1;
+   transform: scale(1);
+  }
+ }
+
 video{
   animation: fade-in 1.75s calc(1) 
 }
@@ -194,16 +205,7 @@ video{
   }
  }
 
-@keyframes enter {
-  from {
-    transform: scale(1.08);
-  opacity: 0;
-  }
-  to {
-   opacity: 1;
-   transform: scale(1);
-  }
- }
+
 
 #Search-Bar {
   height: 50px;

@@ -3,10 +3,11 @@ import OutdoorResult from './IndoorResult';
 
 export interface MainProp {
     businesses: Business[];
-    onAdd: (business: Business)=>void
+    onAdd: (business: Business)=>void;
+    onDelete: (business: Business)=>void
 }
 
-function OutdoorResultsList({businesses, onAdd}:MainProp) {
+function OutdoorResultsList({businesses, onAdd, onDelete}:MainProp) {
     return (
         <div className="Component-List" id="Outdoor-List">
             
@@ -15,7 +16,7 @@ function OutdoorResultsList({businesses, onAdd}:MainProp) {
             <div className="Component-Map-Div">
                 
             {businesses.map( (business, i) => 
-            <OutdoorResult key={i} business={business} onAdd={()=>onAdd(business)}/>)}
+            <OutdoorResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}/>)}
             </div>
 
         </div>

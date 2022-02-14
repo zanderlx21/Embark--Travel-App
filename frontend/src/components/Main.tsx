@@ -60,7 +60,6 @@ function Main() {
         fetchFamily(searchTerm).then((data) => setFamilyList(data.businesses))
         if(searchTerm) 
         fetchNightlife(searchTerm).then((data) => setNightLifeList(data.businesses))
-
     }, [searchTerm]);
             
     const handleSubmitForm = (searchTerm: string) => {
@@ -108,15 +107,19 @@ function Main() {
         <div className="Main">
             <video autoPlay loop muted>
                 <source src={videoBG} type="video/mp4" />
-            </video>
+            </video> 
 
             <Header searchTerm={searchTerm}/>
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
-            <HotelResultsList businesses={hotelList} onAdd={addToItinerary}/>
+            <HotelResultsList businesses={hotelList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
             <FoodResultsList businesses={foodList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
-            <IndoorResultsList businesses={indoorList} onAdd={addToItinerary}/>
-            <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary}/>
+            <IndoorResultsList businesses={indoorList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
+
+
+            <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
+
+
             <AdventureResultsList businesses={adventureList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <FamilyResultsList businesses={familyList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <NightLifeResultsList businesses={nightLifeList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
