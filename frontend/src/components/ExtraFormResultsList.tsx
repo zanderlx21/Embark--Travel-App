@@ -12,14 +12,14 @@ export function ExtraFormResultsList({businesses, onAdd, onDelete}:MainProp) {
 
     return (
         <div className='Component-List' id="Food-List">
-            <h2>Extra Results Placeholder</h2>
+            <h2></h2>
 
         <div className="Component-Map-Div">
         {businesses.map( (business, i) => 
         <ExtraFormResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)} 
         </div>
     
-    )
+    
             
         </div>
     )
