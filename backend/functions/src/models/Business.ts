@@ -1,7 +1,6 @@
 import { ObjectId } from "mongodb";
 
 export interface Business {
-    // location: {
         _id?: ObjectId,
         name: string,
         image_url: string, 
@@ -9,10 +8,13 @@ export interface Business {
         rating: number,
         price: string,
         is_closed: boolean,
-        location: [
-            {display_address: string}
-        ]
+        location: {
+            display_address: string,
+            city: string
+        }
         display_phone: string,
-        url: string
-// }
+        url: string,
+        categories: [
+            {title: string}
+        ]
 }
