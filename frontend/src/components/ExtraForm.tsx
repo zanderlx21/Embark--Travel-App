@@ -4,11 +4,12 @@ import { Business } from '../models/YelpModel';
 
 interface Prop {
     onSubmit: (searchCity:string, searchCategory:string) => void;
+    topSearch: string;
 }
 
-function ExtraForm({onSubmit}:Prop) {
+function ExtraForm({onSubmit, topSearch}:Prop) {
 
-    const [searchCity, setSearchCity] = useState<string>("");
+    const [searchCity, setSearchCity] = useState<string>(topSearch);
     const [searchCategory, setSearchCategory] = useState<string>("");
     
     function onFormSubmit (e: FormEvent) {

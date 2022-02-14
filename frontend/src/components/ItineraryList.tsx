@@ -9,6 +9,7 @@ import "./ItineraryList.css";
 export function ItineraryList({searchTerm}:SearchTermProp) {
 
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
+    
 
     useEffect( ()=> {
         fetchItineraryList().then(data => {

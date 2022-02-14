@@ -65,9 +65,7 @@ export function NightLifeResult({business, onAdd, onDelete}:Prop) {
         <i className="material-icons" id="Add-to-list-Icon" onClick={handleAdd}  title="Add to Itinerary" >playlist_add</i>
         :
         <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
-}
-                       
-
+}             
                 
         </div>
 
@@ -81,7 +79,7 @@ export function NightLifeResult({business, onAdd, onDelete}:Prop) {
             style={customStyles}
             contentLabel="Example Modal"
             >
-        <NightLifeResultExpanded business={business} onAdd={onAdd} onClose={closeModal}/>
+        <NightLifeResultExpanded business={business} onAdd={onAdd} onDelete={onDelete} onClose={closeModal}/>
 
         </Modal>
             }       
