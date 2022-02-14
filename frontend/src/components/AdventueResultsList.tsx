@@ -1,5 +1,6 @@
 import { AdventureResult } from './AdventureResult';
 import { Business } from '../models/YelpModel';
+import { useState } from 'react';
 
 export interface MainProp {
     businesses: Business[];
@@ -8,18 +9,27 @@ export interface MainProp {
 }
 
 function AdventureResultsList({businesses, onAdd, onDelete}:MainProp) {
+    const [hidden, setHidden] = useState(true)
 
+    function toggleDisplay() {
+        if (hidden) {
+        setHidden(false);
+    }   else {
+        setHidden(true)
+    }};
 
     return (
 
         <div className='Component-List' id="Food-List">
-            <h1>Adventure</h1>
-        <div className="Component-Map-Div">
-            
-        {businesses.map( (business, i) => 
-        <AdventureResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)} 
+            <h1 onClick={toggleDisplay}>Adventure</h1>
 
+        {hidden ? 
+        <div className="Component-Map-Div">
+        {businesses.map( (business, i) => 
+        <AdventureResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)}
         </div>
+        : null
+        }
         </div>
     )
 }
