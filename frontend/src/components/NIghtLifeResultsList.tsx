@@ -1,5 +1,7 @@
 import { FamilyResult } from './FamilyResult';
+import { NightLifeResult } from './NightLifeResult';
 import { Business } from '../models/YelpModel';
+import { useState } from 'react';
 
 export interface MainProp {
     businesses: Business[];
@@ -8,18 +10,28 @@ export interface MainProp {
 }
 
 function NightLifeResultsList({businesses, onAdd, onDelete}:MainProp) {
+    const [hidden, setHidden] = useState(true)
 
+    function toggleDisplay() {
+        if (hidden) {
+        setHidden(false);
+    }   else {
+        setHidden(true)
+    }};
 
     return (
 
         <div className='Component-List' id="Food-List">
-            <h1>Night Life</h1>
-        <div className="Component-Map-Div">
-            
-        {businesses.map( (business, i) => 
-        <FamilyResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)} 
+            <h1 onClick={toggleDisplay}>Night Life</h1>
 
+        {hidden ? 
+        <div className="Component-Map-Div">
+        {businesses.map( (business, i) => 
+        <NightLifeResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)}
         </div>
+        : null
+        }
+        
         </div>
     )
 }

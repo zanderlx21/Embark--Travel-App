@@ -315,7 +315,7 @@ video{
 
 /* Parent Container */
 .Component-List { 
-  height: 94vh;
+  /* height: 94vh; */
   background-color: rgb(255, 255, 255);
   /* border: 2px solid yellow; */
   /* overflow-x: scroll;
