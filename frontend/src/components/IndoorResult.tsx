@@ -4,13 +4,27 @@ import Modal from "react-modal";
 import { IndoorResultExpanded } from "../components/IndoorResultExpanded";
 
 interface Prop {
-    business: Business,
-    onAdd: ()=> void
+    business: Business;
+    onAdd: ()=> void;
+    onDelete: ()=> void
 }
 
-function IndoorResult({business, onAdd}:Prop) {
+function IndoorResult({business, onAdd, onDelete}:Prop) {
 
     let [ openExpanded, setOpenExpanded ] = useState(false);
+    let [ hideTheAddButton, setHideTheAddButton] = useState(false)
+    
+    function handleAdd() {
+        setHideTheAddButton(true);
+        console.log(hideTheAddButton)
+        onAdd();
+      }
+
+      function handleDelete() {
+        setHideTheAddButton(false);
+        console.log(hideTheAddButton)
+        onDelete();
+      }
   
     function openModal() {
         setOpenExpanded(true);
@@ -41,8 +55,18 @@ function IndoorResult({business, onAdd}:Prop) {
             <p className="Rating">{business.rating}</p>
             <p className="Price">{business.price}</p>
 
-            <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+            {/* <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button> */}
 
+            <div id="Icon-Div"> 
+        {(!hideTheAddButton) ? 
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleAdd}  title="Add to Itinerary" >playlist_add</i>
+        :
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
+}
+                       
+
+                
+        </div>
             <div id="Modal-Result">
         {openExpanded && 
 

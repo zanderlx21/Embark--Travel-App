@@ -5,10 +5,11 @@ import { useRef } from 'react';
 export interface MainProp {
     businesses: Business[];
     onAdd: (business:Business)=>void;
+    onDelete: (business:Business)=>void;
     // onDelete: (business:Business)=>void;
 }
 
-function HotelResultsList ({businesses, onAdd}:MainProp) {
+function HotelResultsList ({businesses, onAdd, onDelete}:MainProp) {
 
     return (
         <div className="Component-List" id="Hotel-List">
@@ -16,7 +17,7 @@ function HotelResultsList ({businesses, onAdd}:MainProp) {
         <div className="Component-Map-Div"> 
 
         {businesses.map((business, i) => 
-        <HotelResult key={i} business={business} onAdd={()=>onAdd(business)}/>)}
+        <HotelResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}/>)}
         </div>
         </div>
     )

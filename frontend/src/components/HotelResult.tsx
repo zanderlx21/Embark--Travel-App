@@ -6,11 +6,25 @@ import Modal from 'react-modal';
 interface MainProp {
     business: Business;
     onAdd: ()=>void
+    onDelete: ()=>void
 }
 
-export function HotelResult({business, onAdd}:MainProp) {
+export function HotelResult({business, onAdd, onDelete}:MainProp) {
 
     let [ openExpanded, setOpenExpanded ] = useState(false);
+    let [ hideTheAddButton, setHideTheAddButton] = useState(false)
+    
+    function handleAdd() {
+        setHideTheAddButton(true);
+        console.log(hideTheAddButton)
+        onAdd();
+      }
+
+      function handleDelete() {
+        setHideTheAddButton(false);
+        console.log(hideTheAddButton)
+        onDelete();
+      }
   
     function openModal() {
         setOpenExpanded(true);
@@ -42,7 +56,15 @@ export function HotelResult({business, onAdd}:MainProp) {
         <p className="Rating">{business.rating}</p>
         <p className="Price">{business.price}</p>
 
-        <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+        <div id="Icon-Div"> 
+        {(!hideTheAddButton) ? 
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleAdd}  title="Add to Itinerary" >playlist_add</i>
+        :
+        <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
+}
+</div>
+        {/* <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button> */}
+
         <div id="Modal-Result">
         {openExpanded && 
 
