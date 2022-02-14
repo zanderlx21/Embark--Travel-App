@@ -74,6 +74,13 @@ function Main() {
 
         setHideAddButton(true)
         console.log(hideAddButton)
+
+        
+    }
+
+    function handleTopRated() {
+        // onclick filter (ALL??) results - connect to new a fetch for each 
+        // component on frontend and backen - dependent on each section, or have it change them all?
     }
 
     //Delete Items from Itinerary

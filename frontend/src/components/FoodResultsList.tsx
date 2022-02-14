@@ -1,5 +1,6 @@
 import { FoodResult } from './FoodResult';
 import { Business } from '../models/YelpModel';
+import { useState } from 'react';
 // import { ItineraryPost } from '../models/ItineraryPost';
 
 export interface MainProp {
@@ -10,6 +11,16 @@ export interface MainProp {
 
 function FoodResultsList({businesses, onAdd, onDelete}:MainProp) {
 
+//////////////
+// const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
+
+//     function deleteFromItinerary(business:Business) {
+//         onDelete(business);
+
+//         let index = itineraryItems.findIndex(b => b._id === business._id);
+//             setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
+//     }
+//////////////
 
     return (
 
