@@ -129,6 +129,30 @@ yelpRoutes.get("/usersearch", async (req, res) => {
                 res.status(500).json({message: "Internal Service Error"});
             }
         });
+
+
+
+yelpRoutes.get("/reviews/:id", async (req, res) => {
+
+    let id = req.params.id;
+        
+    try {
+        const api_url = `https://api.yelp.com/v3/businesses/${id}/reviews`;
+        
+        let fetch_response12 = await fetch(api_url, {
+            headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+        });
+        
+        let json12 = await fetch_response12.json();
+        console.log(json12)
+        res.json(json12);
+
+    }  
+    catch (e){
+        console.error("ERROR", e);
+        res.status(500).json({message: "Internal Service Error"});
+    }
+});
     
 
 

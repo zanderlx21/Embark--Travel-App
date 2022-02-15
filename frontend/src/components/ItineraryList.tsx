@@ -28,7 +28,7 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
     function deleteFromItinerary(business:Business) {
         deleteItineraryItem(business);
 
-        let index = itineraryItems.findIndex(b => b._id === business._id);
+        let index = itineraryItems.findIndex(b => b.id === business.id);
             setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
     }
 
