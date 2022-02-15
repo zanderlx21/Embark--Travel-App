@@ -31,8 +31,8 @@ function Footer(){
             <h1 id="Logo-Header"><span id="Logo-E">e</span>mbark</h1>
 
             {showButton && (
-            <button onClick={scrollToTop} className="back-to-top">
-             &#8679;   {/* this sympol is used for the up-arrow  */}
+            <button onClick={scrollToTop} className="Back-To-Top-Btn">
+             Back to Top   {/* this sympol is used for the up-arrow  */}
             </button>
             )}
 
