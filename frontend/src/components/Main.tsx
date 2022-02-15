@@ -81,7 +81,7 @@ function Main() {
     function deleteFromItinerary(business:Business) {
         deleteItineraryItem(business);
 
-        let index = itineraryItems.findIndex(b => b._id === business._id);
+        let index = itineraryItems.findIndex(b => b.id === business.id);
             setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
 
         setHideAddButton(false)
@@ -103,7 +103,6 @@ function Main() {
         setSearchCategory(searchCategory);
         
     }
-    // console.log(searchCategory, searchCity)
   
     return (
         <div className="Main">

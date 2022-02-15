@@ -4,7 +4,7 @@ export interface YelpModel {
 }
 
 export interface Business {
-    _id?: string,
+    id: string,
     name: string,
     image_url: string, 
     review_count: number,

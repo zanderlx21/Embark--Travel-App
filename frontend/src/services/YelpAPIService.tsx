@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Business, YelpModel } from "../models/YelpModel";
+import { ReviewModel, Reviews } from "../models/ReviewModel";
 
 const baseUrl = "http://localhost:5001/travelapp-f2d81/us-central1/api/search";
 
@@ -83,6 +84,20 @@ export const fetchNightlife = (query: string):Promise<YelpModel> => {
     .get<YelpModel>((baseUrl), {
       params: { location: query, 
       categories: "bars,musicvenues,theater,lounges,barcrawl,beergardens,karaoke,pianobars,poolhalls,casinos,jazzandblues"}
+    })
+    .then( res => res.data)
+}
+
+// review data
+
+export const fetchReviews = (id:string):Promise<Reviews> => {
+  console.log(id);
+  axios
+    .get<Reviews>((`http://localhost:5001/travelapp-f2d81/us-central1/api/reviews/${id}`), {
+    })
+    .then( res => console.log(res.data));
+  return axios
+    .get<Reviews>((`http://localhost:5001/travelapp-f2d81/us-central1/api/reviews/${id}`), {
     })
     .then( res => res.data)
 }
