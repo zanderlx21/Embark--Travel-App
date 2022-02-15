@@ -10,7 +10,7 @@ interface Prop {
 }
 
 function IndoorResult({business, onAdd, onDelete}:Prop) {
-
+    
     let [ openExpanded, setOpenExpanded ] = useState(false);
     let [ hideTheAddButton, setHideTheAddButton] = useState(false)
     

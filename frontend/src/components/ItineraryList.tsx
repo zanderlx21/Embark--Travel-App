@@ -15,7 +15,7 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
         fetchItineraryList().then(data => {
             setItineraryItems(data);
         });
-    },[]);
+    },[itineraryItems]);
 
     function deleteFromItinerary(business:Business) {
         deleteItineraryItem(business);
