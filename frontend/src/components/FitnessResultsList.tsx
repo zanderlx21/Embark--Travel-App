@@ -1,7 +1,6 @@
 import { FitnessResult } from './FitnessResult';
 import { Business } from '../models/YelpModel';
 import { useState } from 'react';
-// import { ItineraryPost } from '../models/ItineraryPost';
 
 export interface MainProp {
     businesses: Business[];

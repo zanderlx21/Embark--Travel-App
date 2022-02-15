@@ -1,6 +1,7 @@
 import {useState, useEffect, FormEvent} from 'react'
-import { deleteItineraryItem, fetchFood, fetchHotels, fetchIndoor, fetchItineraryList, 
-    fetchOutdoor, postItineraryItem, fetchCategory, fetchFitness, fetchRelaxation, fetchAdventure, fetchFamily, fetchNightlife } from '../services/YelpAPIService';
+import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor, fetchCategory, 
+    fetchFitness, fetchRelaxation, fetchAdventure, fetchFamily, fetchNightlife } from '../services/YelpAPIService';
+import { deleteItineraryItem, postItineraryItem, fetchItineraryList, fetchItineraryCity } from '../services/DbService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import Header from './Header';
@@ -75,11 +76,6 @@ function Main() {
         console.log(hideAddButton)
 
         
-    }
-
-    function handleTopRated() {
-        // onclick filter (ALL??) results - connect to new a fetch for each 
-        // component on frontend and backen - dependent on each section, or have it change them all?
     }
 
     //Delete Items from Itinerary

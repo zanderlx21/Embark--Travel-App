@@ -1,4 +1,3 @@
-import { FitnessResult } from './FitnessResult';
 import { RelaxationResult } from './RelaxationResult';
 import { Business } from '../models/YelpModel';
 import { useState } from 'react';

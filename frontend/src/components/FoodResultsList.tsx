@@ -12,23 +12,13 @@ export interface MainProp {
 function FoodResultsList({businesses, onAdd, onDelete}:MainProp) {
     const [hidden, setHidden] = useState(true)
 
+
     function toggleDisplay() {
         if (hidden) {
         setHidden(false);
     }   else {
         setHidden(true)
     }};
-
-//////////////testing removing from sidebar
-// const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
-
-//     function deleteFromItinerary(business:Business) {
-//         onDelete(business);
-
-//         let index = itineraryItems.findIndex(b => b._id === business._id);
-//             setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
-//     }
-//////////////
 
     return (
 

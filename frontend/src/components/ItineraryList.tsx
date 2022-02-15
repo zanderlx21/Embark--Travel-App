@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { fetchItineraryList } from "../services/YelpAPIService";
+import { fetchItineraryList, deleteItineraryItem, fetchItineraryCity } from "../services/DbService";
 import { Business } from "../models/YelpModel";
 import { ItineraryItem } from "./ItineraryItem";
-import { deleteItineraryItem } from "../services/YelpAPIService";
 import { SearchTermProp } from "./Main";
 import "./ItineraryList.css";
 
