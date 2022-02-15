@@ -28,6 +28,7 @@ function ExtraForm({onSubmit, topSearch}:Prop) {
                     <input type="text" name="city" id="Extra-Search-Bar" placeholder="City Name" 
                     onChange={(e) => setSearchCity(e.target.value)} 
                     ></input>
+                    <br />
                     <input type="text" name="activity" id="Extra-Search-Bar" placeholder="Ex: Yoga, Market, Grocery, Spa" 
                     onChange={(e) => setSearchCategory(e.target.value)} 
                     ></input>

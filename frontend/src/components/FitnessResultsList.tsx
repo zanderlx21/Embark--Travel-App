@@ -22,7 +22,7 @@ function FitnessResultsList({businesses, onAdd, onDelete}:MainProp) {
     return (
 
         <div className='Component-List' id="Food-List">
-            <h1 onClick={toggleDisplay}>Fitness / Active</h1>
+           <h1 onClick={toggleDisplay}> Fitness Lifestyle <i className="material-icons" id="Dropdown-Arrow" onClick={toggleDisplay}  title="Show results" >expand_more</i></h1>
         
         {hidden ? 
         <div className="Component-Map-Div">
