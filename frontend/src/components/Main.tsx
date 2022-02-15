@@ -1,7 +1,7 @@
 import {useState, useEffect, FormEvent} from 'react'
 import { fetchFood, fetchHotels, fetchIndoor, fetchOutdoor, fetchCategory, 
     fetchFitness, fetchRelaxation, fetchAdventure, fetchFamily, fetchNightlife } from '../services/YelpAPIService';
-import { deleteItineraryItem, postItineraryItem, fetchItineraryList, fetchItineraryCity } from '../services/DbService';
+import { deleteItineraryItem, postItineraryItem, fetchItineraryList } from '../services/DbService';
 import { Business } from '../models/YelpModel';
 import SearchForm from './SearchForm'
 import Header from './Header';
@@ -13,7 +13,7 @@ import FitnessResultsList from './FitnessResultsList';
 import RelaxationResultsList from './RelaxationResultsList';
 import AdventureResultsList from './AdventueResultsList';
 import FamilyResultsList from './FamilyResultsList';
-import NightLifeResultsList from './NIghtLifeResultsList';
+import NightLifeResultsList from './NightLifeResultsList';
 // @ts-ignore
 import videoBG from './video/video-BG.mp4'
 //
@@ -75,7 +75,6 @@ function Main() {
         setHideAddButton(true)
         // console.log(hideAddButton)
 
-        
     }
 
     //Delete Items from Itinerary
@@ -118,9 +117,7 @@ function Main() {
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
             <FoodResultsList businesses={foodList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <IndoorResultsList businesses={indoorList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
-
             <OutdoorResultsList businesses={outdoorList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>
-
             <AdventureResultsList businesses={adventureList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <FamilyResultsList businesses={familyList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />
             <NightLifeResultsList businesses={nightLifeList} onAdd={addToItinerary} onDelete={deleteFromItinerary} />

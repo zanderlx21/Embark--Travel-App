@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchItineraryList, deleteItineraryItem, fetchItineraryCity } from "../services/DbService";
+import { fetchItineraryList, deleteItineraryItem } from "../services/DbService";
 import { Business } from "../models/YelpModel";
 import { ItineraryItem } from "./ItineraryItem";
 import { SearchTermProp } from "./Main";
@@ -18,10 +18,10 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
             setItineraryItems(data);
         });
         // just for retreiving all city names in database
-        fetchItineraryCity().then(data=> {
-            setCityNames(data);
-            console.log(cityNames);
-        });
+        // fetchItineraryCity().then(data=> {
+        //     setCityNames(data);
+        //     console.log(cityNames);
+        // });
         // then will have another fetch to receive specific info from those cities?
     },[]);
 
