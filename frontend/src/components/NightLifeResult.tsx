@@ -9,6 +9,7 @@ interface Prop {
     business: Business;
     onAdd: () => void;
     onDelete: () => void;
+    
 }
 
 export function NightLifeResult({business, onAdd, onDelete}:Prop) {
