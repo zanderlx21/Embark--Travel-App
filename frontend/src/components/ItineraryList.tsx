@@ -6,7 +6,11 @@ import { SearchTermProp } from "./Main";
 import { CityNames, CityName } from "../models/DbModels";
 import "./ItineraryList.css";
 
-export function ItineraryList({searchTerm}:SearchTermProp) {
+export interface PropHeader {
+    refresh: boolean;
+}
+
+export function ItineraryList({refresh}: PropHeader) {
 
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
     const [ cityNames, setCityNames ] = useState<string[]>([]);
@@ -23,7 +27,7 @@ export function ItineraryList({searchTerm}:SearchTermProp) {
         //     console.log(cityNames);
         // });
         // then will have another fetch to receive specific info from those cities?
-    },[]);
+    },[refresh]);
 
     function deleteFromItinerary(business:Business) {
         deleteItineraryItem(business);
