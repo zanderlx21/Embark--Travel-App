@@ -3,17 +3,26 @@ import { fetchItineraryList, deleteItineraryItem, fetchItineraryCity } from "../
 import { Business } from "../models/YelpModel";
 import { ItineraryItem } from "./ItineraryItem";
 import { SearchTermProp } from "./Main";
+import { CityNames, CityName } from "../models/DbModels";
 import "./ItineraryList.css";
 
 export function ItineraryList({searchTerm}:SearchTermProp) {
 
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
+    const [ cityNames, setCityNames ] = useState<string[]>([]);
+    const [ cityName, setCityName ] = useState<CityName>();
     
 
     useEffect( ()=> {
         fetchItineraryList().then(data => {
             setItineraryItems(data);
         });
+        // just for retreiving all city names in database
+        fetchItineraryCity().then(data=> {
+            setCityNames(data);
+            console.log(cityNames);
+        });
+        // then will have another fetch to receive specific info from those cities?
     },[]);
 
     function deleteFromItinerary(business:Business) {

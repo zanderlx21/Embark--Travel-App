@@ -1,7 +1,6 @@
 import axios from "axios";
+import { CityNames, CityName } from "../models/DbModels";
 import { Business, YelpModel } from "../models/YelpModel";
-
-/// Calling the DATABASE on the Frontend
 
 export const fetchItineraryList = ():Promise<Business[]> => {
     return axios
@@ -9,9 +8,13 @@ export const fetchItineraryList = ():Promise<Business[]> => {
       .then( res => (res.data)
   )};
   
-  export const fetchItineraryCity = ():Promise<Business[]> => {
+  export const fetchItineraryCity = ():Promise <string[]> => {
     return axios
-      .get(("http://localhost:5001/travelapp-f2d81/us-central1/api/itinerarylist/cityname"))
+      .get(("http://localhost:5001/travelapp-f2d81/us-central1/api/itinerarylist/citynames")
+    , {
+        // params: { location: city,
+        // }
+    })
       .then( res => (res.data)
   )};
   

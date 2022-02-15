@@ -20,7 +20,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
 
             let json1 = await fetch_response1.json();
-            console.log(json1)
+            // console.log(json1)
             res.json(json1);
             }
 
@@ -30,7 +30,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
 
             let json2 = await fetch_response2.json();
-            console.log(json2)
+            // console.log(json2)
             res.json(json2);
         }
 
@@ -40,7 +40,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
     
             let json3 = await fetch_response3.json();
-            console.log(json3)
+            // console.log(json3)
             res.json(json3);
         }
         if (category === "parks,zoos,beaches,boating,discgolf,fishing,paddleboarding,gardens,castles,boatcharters,bikerentals") {
@@ -49,7 +49,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
         
             let json4 = await fetch_response4.json();
-            console.log(json4)
+            // console.log(json4)
             res.json(json4);
         }
         if (category === "fitness,yoga,gyms,meditationcenters") {
@@ -58,7 +58,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
         
             let json5 = await fetch_response5.json();
-            console.log(json5)
+            // console.log(json5)
             res.json(json5);
         }
         if (category === "spa,massage,hotsprings") {
@@ -67,7 +67,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
         
             let json6 = await fetch_response6.json();
-            console.log(json6)
+            // console.log(json6)
             res.json(json6);
         }
         if (category === "hiking,canyoneering,climbing,hot_air_balloons,mountainbiking,paragliding,parasailing,rafting,rock_climbing,skydiving,zipline,snorkeling,surfing,tubing,jetskis,atvrentals,skiing") {
@@ -76,7 +76,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
         
             let json7 = await fetch_response7.json();
-            console.log(json7)
+            // console.log(json7)
             res.json(json7);
         }
 
@@ -86,7 +86,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
         
             let json8 = await fetch_response8.json();
-            console.log(json8)
+            // console.log(json8)
             res.json(json8);
         }
         if (category === "bars,musicvenues,theater,lounges,barcrawl,beergardens,karaoke,pianobars,poolhalls,casinos,jazzandblues") {
@@ -95,7 +95,7 @@ yelpRoutes.get("/search", async (req, res) => {
             });
         
             let json9 = await fetch_response9.json();
-            console.log(json9)
+            // console.log(json9)
             res.json(json9);
         }
     }
@@ -120,7 +120,7 @@ yelpRoutes.get("/usersearch", async (req, res) => {
                 });
                 let json10 = await fetch_response10.json();
                 console.log(fetch_response10)
-                console.log(json10)
+                // console.log(json10)
                 res.json(json10);
                 }
             
