@@ -40,7 +40,7 @@ function Main() {
     const[ familyList, setFamilyList ] = useState<Business[]>([]);
     const[ nightLifeList, setNightLifeList ] = useState<Business[]>([]);
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
-    const [ hideAddButton, setHideAddButton ] = useState(false)
+    const [ refresh, setRefresh ] = useState(false)
 
     useEffect( () => {
         if(searchTerm) 
@@ -72,7 +72,7 @@ function Main() {
         postItineraryItem(business);
         // console.log(business);
 
-        setHideAddButton(true)
+        setRefresh(true)
         // console.log(hideAddButton)
 
     }
@@ -84,7 +84,7 @@ function Main() {
         let index = itineraryItems.findIndex(b => b._id === business._id);
             setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
 
-        setHideAddButton(false)
+        setRefresh(false)
         // console.log(hideAddButton)
     }
 
@@ -111,7 +111,8 @@ function Main() {
                 <source src={videoBG} type="video/mp4" />
             </video> 
 
-            <Header searchTerm={searchTerm}/>
+            <Header refresh={refresh}/>
+
             <SearchForm onSubmit={handleSubmitForm} /> 
             <AboutLocation searchTerm={searchTerm}/>
             <HotelResultsList businesses={hotelList} onAdd={addToItinerary} onDelete={deleteFromItinerary}/>

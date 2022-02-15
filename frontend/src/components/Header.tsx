@@ -3,7 +3,11 @@ import { Business } from "../models/YelpModel";
 import { ItineraryList } from "./ItineraryList";
 import { SearchTermProp } from "./Main";
 
-function Header({searchTerm}:SearchTermProp) {
+export interface PropHeader {
+    refresh: boolean;
+}
+
+function Header({refresh}: PropHeader) {
     const [hidden, setHidden] = useState<boolean>(true);
 
     function sliderClickHandler() {
@@ -17,7 +21,7 @@ function Header({searchTerm}:SearchTermProp) {
             <button id="Itinerary-Slider" onClick={sliderClickHandler}>|</button>
 
             <div>
-            {(!hidden) ? <ItineraryList searchTerm={searchTerm}/> : null}
+            {(!hidden) ? <ItineraryList refresh={refresh} /> : null}
             </div>
             
             {/* <div className="Menu-Icon">{menuIcon}</div> */}
