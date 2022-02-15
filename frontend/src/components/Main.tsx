@@ -70,10 +70,10 @@ function Main() {
     function addToItinerary(business: Business){
 
         postItineraryItem(business);
-        console.log(business);
+        // console.log(business);
 
         setHideAddButton(true)
-        console.log(hideAddButton)
+        // console.log(hideAddButton)
 
         
     }
@@ -86,7 +86,7 @@ function Main() {
             setItineraryItems(prev => [...prev.slice(0, index), ...prev.slice(index+1)])
 
         setHideAddButton(false)
-        console.log(hideAddButton)
+        // console.log(hideAddButton)
     }
 
     /////// USER SEARCH /////////
