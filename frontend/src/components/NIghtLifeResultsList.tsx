@@ -1,4 +1,3 @@
-import { FamilyResult } from './FamilyResult';
 import { NightLifeResult } from './NightLifeResult';
 import { Business } from '../models/YelpModel';
 import { useState } from 'react';

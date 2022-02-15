@@ -2,7 +2,7 @@ import { Business } from "../models/YelpModel"
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { FitnessResultExpanded } from "../components/FitnessResultExpanded";
-import { postItineraryItem, deleteItineraryItem } from "../services/YelpAPIService";
+import { postItineraryItem, deleteItineraryItem } from "../services/DbService";
 
 
 interface Prop {
