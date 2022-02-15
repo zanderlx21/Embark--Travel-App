@@ -4,12 +4,10 @@ import Modal from "react-modal";
 import { NightLifeResultExpanded } from "../components/NightLifeResultExpanded";
 import { postItineraryItem, deleteItineraryItem } from "../services/DbService";
 
-
 interface Prop {
     business: Business;
     onAdd: () => void;
-    onDelete: () => void;
-    
+    onDelete: () => void;  
 }
 
 export function NightLifeResult({business, onAdd, onDelete}:Prop) {
@@ -48,7 +46,6 @@ export function NightLifeResult({business, onAdd, onDelete}:Prop) {
         transform: 'translate(-50%, -50%)',
       },
     };
-
         // useEffect(() => {
     //     Modal.setAppElement('#Modal_Result');
     // });
