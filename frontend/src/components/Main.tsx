@@ -104,7 +104,7 @@ function Main() {
         setSearchCategory(searchCategory);
         
     }
-    console.log(searchCategory, searchCity)
+    // console.log(searchCategory, searchCity)
   
     return (
         <div className="Main">
