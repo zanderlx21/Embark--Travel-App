@@ -110,6 +110,8 @@ if(business.rating === 5) {
         :
         <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
 }             
+<p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+            <p className="Yelp-Logo"><img src="yelp_logo.png" height={22}/></p> 
                 
         </div>
         </div>

@@ -96,10 +96,10 @@ export function HotelResultExpanded({business, onAdd, onClose}:MainProp) {
                             <span className="Review-Time">{review.time_created}</span><br/>
                             </li> )}</p>
 
-            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
-
             </div>
             <button id="Add-to-List-Button" disabled={disable} onClick={clickButtonDisable} >Add to Itinerary</button>
-        </div>
+            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+            <p className="Yelp-Logo"><img src="yelp_logo.png" height={22}/></p> 
+ </div>
     )
 }
