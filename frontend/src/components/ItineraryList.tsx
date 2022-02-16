@@ -17,7 +17,7 @@ export function ItineraryList({refresh}: PropHeader) {
     const [ cityName, setCityName ] = useState<CityName>();
     
 
-    useLayoutEffect( ()=> {
+    useEffect( ()=> {
         fetchItineraryList().then(data => {
             setItineraryItems(data);
         });

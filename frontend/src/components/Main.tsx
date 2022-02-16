@@ -58,23 +58,14 @@ function Main() {
     const [ display, setDisplay ] = useState(false)
 
     useEffect( () => {
-        
         fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
-         
         fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
-        
         fetchIndoor(searchTerm).then((data) => setIndoorList(data.businesses)) 
-        
         fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses))
-        
         fetchFitness(searchTerm).then((data) => setFitnessList(data.businesses))
-        
         fetchRelaxation(searchTerm).then((data) => setRelaxationList(data.businesses))
-        
         fetchAdventure(searchTerm).then((data) => setAdventureList(data.businesses))
-        
         fetchFamily(searchTerm).then((data) => setFamilyList(data.businesses))
-        
         fetchNightlife(searchTerm).then((data) => setNightLifeList(data.businesses))
     }, [searchTerm]);
             

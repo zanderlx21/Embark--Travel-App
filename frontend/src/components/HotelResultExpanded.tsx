@@ -81,20 +81,20 @@ export function HotelResultExpanded({business, onAdd, onClose}:MainProp) {
 
             <div className="Expanded-Result-Content">
             <img id="Star-Rating" src={StarRating}/>
-            <p>Number of Reviews: {business.review_count}</p>
-            <p>Price: {business.price}</p>
-            <p>Open Now: {business.is_closed}</p>
-            <p>Phone: {business.display_phone}</p>
+            <p className="Review-Count">{business.review_count} reviews </p>
+            <p id="Price-Modal">Price: {business.price}</p>
+            <p id="Open-or-Closed">Open Now: {business.is_closed}</p>
+            <p id="Phone-Number">Phone: {business.display_phone}</p>
             <p>Address: {business.location.display_address}</p>
-            <p>Category: {business.categories.map((category, i) => <li key={i}> {category.title}/</li> )}</p>
+            <p className="Category-Bullets">Category: {business.categories.map((category, i) => <li className="Category-Bullets" key={i}> - {category.title}</li> )}</p>
             <p>Reviews: {reviews.map((review, i) => 
-            <li key={i}> 
-           <span className="Rating" id="Star-Rating"> Rating: {review.rating}</span><br/>
+            <div key={i}> 
+                <span className="Rating" id="Star-Rating"> Rating: {review.rating}</span><br/>
                     <span className="Review-Text">{review.text} </span> 
-                        <span className="Review-Link"> <a href={review.url} target={"_blank"}>See Full Review</a> </span><br/>
-                          <span className="Review-Name">{review.user.name}</span><br/>
-                            <span className="Review-Time">{review.time_created}</span><br/>
-                            </li> )}</p>
+                        <span className="Review-Link"> <a href={review.url} target={"_blank"} id="Review-Link">See Full Review</a> </span>
+                            <span className="Review-Time"> <br/>{review.time_created} <br/></span>
+                            </div> )}</p>
+
 
             </div>
             <button id="Add-to-List-Button" disabled={disable} onClick={clickButtonDisable} >Add to Itinerary</button>
