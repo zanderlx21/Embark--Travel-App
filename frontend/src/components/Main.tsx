@@ -101,7 +101,7 @@ function Main() {
     function onUserSubmit (searchCity:string, searchCategory:string) {
         setSearchCity(searchCity);
         setSearchCategory(searchCategory);
-        
+
     }
   
     return (
