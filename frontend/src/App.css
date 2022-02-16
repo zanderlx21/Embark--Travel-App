@@ -646,7 +646,7 @@ animation: pulse 3s infinite
   text-align: right;
 }
 /* ----------------------------------------760 SCREEN VIEW BELOW */
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 700px) {
     #Itinerary-Slider {
         font-size: 3.5rem;
         position: fixed;
