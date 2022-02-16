@@ -94,9 +94,9 @@ export function NightLifeResult({business, onAdd, onDelete}:Prop) {
         transform: 'translate(-50%, -50%)',
       },
     };
-        // useEffect(() => {
-    //     Modal.setAppElement('#Modal_Result');
-    // });
+        useEffect(() => {
+        Modal.setAppElement('#Modal-Result');
+    });
 
     return (
         <div className="Component-Result">

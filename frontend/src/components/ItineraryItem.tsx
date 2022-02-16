@@ -20,8 +20,13 @@ export function ItineraryItem({business, onDelete}:Props) {
     
             <div className="Inner-Div2">
             <p>Rating: {business.rating} <i className="material-icons" id="Trash-Can" onClick={onDelete}>delete</i></p>
-            <p>Number of Reviews: {business.review_count}</p>
+            <p>Reviews: {business.review_count}</p>
             <p>Price: {business.price}</p>
+            <p>Open Now: {business.is_closed}</p> 
+            <p>Phone: {business.display_phone}</p>
+            <p>Address: {business.location.display_address}</p>
+            <p><a href={business.url} target="_blank">Link to Yelp</a></p>
+
             </div>
             </div>
 

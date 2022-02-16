@@ -1,5 +1,5 @@
 import { Business } from "../models/YelpModel"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { OutdoorResultExpanded } from "../components/OutdoorResultExpanded";
 
@@ -91,9 +91,9 @@ function OutdoorResult({business, onAdd, onDelete}:Prop) {
       },
     };
 
-        // useEffect(() => {
-    //     Modal.setAppElement('#Modal_Result');
-    // });
+        useEffect(() => {
+        Modal.setAppElement('#Modal-Result');
+    });
 
     return (
 

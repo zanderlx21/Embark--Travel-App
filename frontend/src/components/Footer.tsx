@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-
-
-
+import React, { Component } from "react";
+import { render } from "react-dom";
 
 
 function Footer(){

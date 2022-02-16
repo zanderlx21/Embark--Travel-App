@@ -90,9 +90,9 @@ export function HotelResult({business, onAdd, onDelete}:MainProp) {
       },
     };
 
-    // useEffect(() => {
-    //     Modal.setAppElement('#Modal_Result');
-    // });
+    useEffect(() => {
+        Modal.setAppElement('#Modal-Result');
+    });
 
     return (
 

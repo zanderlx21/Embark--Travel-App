@@ -93,9 +93,9 @@ let [ openExpanded, setOpenExpanded ] = useState(false);
       },
     };
 
-    // useEffect(() => {
-    //     Modal.setAppElement('#Modal_Result');
-    // });
+    useEffect(() => {
+        Modal.setAppElement('#Modal-Result');
+    });
 
     return (
         <div className="Component-Result">

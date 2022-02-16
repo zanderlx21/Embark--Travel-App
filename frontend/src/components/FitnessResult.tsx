@@ -93,9 +93,9 @@ export function FitnessResult({business, onAdd, onDelete}:Prop) {
       },
     };
 
-        // useEffect(() => {
-    //     Modal.setAppElement('#Modal_Result');
-    // });
+        useEffect(() => {
+        Modal.setAppElement('#Modal-Result');
+    });
 
     return (
         <div className="Component-Result">

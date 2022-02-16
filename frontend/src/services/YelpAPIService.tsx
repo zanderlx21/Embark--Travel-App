@@ -4,7 +4,6 @@ import { ReviewModel, Reviews } from "../models/ReviewModel";
 
 const baseUrl = "http://localhost:5001/travelapp-f2d81/us-central1/api/search";
 
-/// API
 export const fetchFood = (query: string):Promise<YelpModel> => {
     return axios
       .get<YelpModel>((baseUrl), {
@@ -89,13 +88,8 @@ export const fetchNightlife = (query: string):Promise<YelpModel> => {
 }
 
 // review data
-
 export const fetchReviews = (id:string):Promise<Reviews> => {
-  console.log(id);
-  axios
-    .get<Reviews>((`http://localhost:5001/travelapp-f2d81/us-central1/api/reviews/${id}`), {
-    })
-    .then( res => console.log(res.data));
+
   return axios
     .get<Reviews>((`http://localhost:5001/travelapp-f2d81/us-central1/api/reviews/${id}`), {
     })

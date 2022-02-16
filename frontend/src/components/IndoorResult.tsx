@@ -1,5 +1,5 @@
 import { Business } from "../models/YelpModel"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { IndoorResultExpanded } from "../components/IndoorResultExpanded";
 
@@ -90,9 +90,9 @@ function IndoorResult({business, onAdd, onDelete}:Prop) {
         transform: 'translate(-50%, -50%)',
       },
     };
-        // useEffect(() => {
-    //     Modal.setAppElement('#Modal_Result');
-    // });
+        useEffect(() => {
+        Modal.setAppElement('#Modal-Result');
+    });
 
     return (
 

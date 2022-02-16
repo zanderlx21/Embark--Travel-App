@@ -496,22 +496,22 @@ video{
 }
 
 #Hotel-List {
-  background-color: #1e4f63;
-  color: white;
+  background-color: rgb(232, 228, 207);
+  /* #1e4f63 */
 }
 
 #Food-List {
-  background-color: rgb(229, 224, 192);
+  background-color: rgb(232, 228, 207);
 }
 
 #Indoor-List {
-  background-color: #c59b4d;
-  color: white;
+  background-color: rgb(232, 228, 207);
+  /* #c59b4d */
 }
 
 #Outdoor-List {
-  background-color: #637e6a;
-  color: white;
+  background-color: rgb(232, 228, 207);
+  /* #637e6a */
 }
 
 .Extra-Form-Container {
