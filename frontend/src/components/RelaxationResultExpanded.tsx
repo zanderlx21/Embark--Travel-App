@@ -87,9 +87,11 @@ export function RelaxationResultExpanded({business, onAdd, onClose}:MainProp) {
                           <span className="Review-Name">{review.user.name}</span><br/>
                             <span className="Review-Time">{review.time_created}</span><br/>
                             </li> )}</p>
-            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+         
             </div>
             <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+            <p className="Yelp-Logo"><img src="yelp_logo.png" height={22}/></p> 
         </div>
     )
 }

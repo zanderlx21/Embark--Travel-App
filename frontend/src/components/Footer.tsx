@@ -35,6 +35,7 @@ function Footer(){
              Back to Top   {/* this sympol is used for the up-arrow  */}
             </button>
             )}
+            <p><img src="yelp_logo_dark_bg_cmyk.png"height={30}/></p>
 
             <p>Copyright © 2004 2022 Yelp Inc. Yelp, Yelp logo, Yelp burst and related marks are registered trademarks of Yelp.</p>
 

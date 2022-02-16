@@ -78,7 +78,6 @@ export function FamilyResultExpanded({business, onAdd, onClose}:MainProp) {
             <p>Phone: {business.display_phone}</p>
             <p>Address: {business.location.display_address}</p>
             <p>Category: {business.categories.map((category, i) => <li key={i}> {category.title}/</li> )}</p>
-            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
             <p>Reviews: {reviews.map((review, i) => 
             <li key={i}> 
                 <span className="Rating" id="Star-Rating"> Rating: {review.rating}</span><br/>
@@ -87,8 +86,11 @@ export function FamilyResultExpanded({business, onAdd, onClose}:MainProp) {
                           <span className="Review-Name">{review.user.name}</span><br/>
                             <span className="Review-Time">{review.time_created}</span><br/>
                             </li> )}</p>
+                            
             </div>
             <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+            <p className="Yelp-Logo"><img src="yelp_logo.png" height={22}/></p> 
         </div>
     )
 }
