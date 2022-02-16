@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { fetchItineraryList, deleteItineraryItem } from "../services/DbService";
 import { Business } from "../models/YelpModel";
 import { ItineraryItem } from "./ItineraryItem";
@@ -17,7 +17,7 @@ export function ItineraryList({refresh}: PropHeader) {
     const [ cityName, setCityName ] = useState<CityName>();
     
 
-    useEffect( ()=> {
+    useLayoutEffect( ()=> {
         fetchItineraryList().then(data => {
             setItineraryItems(data);
         });

@@ -22,7 +22,7 @@ function HotelResultsList ({businesses, onAdd, onDelete}:MainProp) {
     return (
         <div className="Component-List" id="Hotel-List">
             
-            <h1 onClick={toggleDisplay}> Hotels <i className="material-icons" id="Dropdown-Arrow" onClick={toggleDisplay}  title="Show results" >expand_more</i></h1> 
+            <h1 onClick={toggleDisplay}> <i className="material-icons" id="Dropdown-Arrow" onClick={toggleDisplay}  title="Show results" >expand_more</i> Hotels</h1> 
         
         {hidden ?
         <div className="Component-Map-Div"> 

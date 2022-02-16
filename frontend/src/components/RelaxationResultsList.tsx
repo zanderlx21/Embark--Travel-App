@@ -23,7 +23,7 @@ function RelaxationResultsList({businesses, onAdd, onDelete}:MainProp) {
     return (
 
         <div className='Component-List' id="Food-List">
-            <h1 onClick={toggleDisplay}> Relaxation <i className="material-icons" id="Dropdown-Arrow" onClick={toggleDisplay}  title="Show results" >expand_more</i></h1>
+             <h1 onClick={toggleDisplay}> <i className="material-icons" id="Dropdown-Arrow" onClick={toggleDisplay}  title="Show results" >expand_more</i> Relaxation </h1>
 
         {hidden ? 
         <div className="Component-Map-Div">
