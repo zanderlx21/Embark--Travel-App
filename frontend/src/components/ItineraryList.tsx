@@ -38,7 +38,7 @@ export function ItineraryList({refresh}: PropHeader) {
 
     return (
         <div className="Itinerary-List">
-            <h2 className="H2-Itinerary-List"><p className="Itinerary-List-Name">Your Itinerary</p></h2>
+            <h2 className="Itinerary-List-Name">Your Itinerary</h2>
             {itineraryItems.map((business, i)=> 
             <ItineraryItem key={i} business={business} onDelete={()=>deleteFromItinerary(business)}/>)}
         </div>

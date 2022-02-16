@@ -4,6 +4,18 @@ import { useEffect, useState } from "react";
 import { ReviewModel, Reviews } from "../models/ReviewModel";
 import "./ResultsExpanded.css";
 
+//importing Yelp Stars//
+import zeroStars from './Yelp-Stars/0_stars.png'
+import oneStar from './Yelp-Stars/1_star.png'
+import oneHalfStars from './Yelp-Stars/1_half_stars.png'
+import twoStars from './Yelp-Stars/2_stars.png'
+import twoHalfStars from './Yelp-Stars/2_half_stars.png'
+import threeStars from './Yelp-Stars/3_stars.png'
+import threeHalfStars from './Yelp-Stars/3_half_stars.png'
+import fourStars from './Yelp-Stars/4_stars.png'
+import fourHalfStars from './Yelp-Stars/4_half_stars.png'
+import fiveStars from './Yelp-Stars/5_stars.png'
+
 interface MainProp {
     business: Business;
     onAdd: ()=>void;
@@ -18,6 +30,39 @@ export function AdventureResultExpanded({business, onAdd, onClose}:MainProp) {
         fetchReviews(business.id).then((data) => setReviews(data.reviews))
     }, []);
 
+    //This sets conditionals for Star Ratings
+    let StarRating = "";
+
+    if(business.rating === 0) {
+      StarRating = zeroStars
+    }
+    if(business.rating === 1) {
+      StarRating = oneStar
+    }
+    if(business.rating === 1.5) {
+      StarRating = oneHalfStars
+    }
+    if(business.rating === 2) {
+      StarRating = twoStars
+    }
+    if(business.rating === 2.5) {
+      StarRating = twoHalfStars
+    }
+    if(business.rating === 3) {
+      StarRating = threeStars
+    }
+    if(business.rating === 3.5) {
+      StarRating = threeHalfStars
+    }
+    if(business.rating === 4) {
+      StarRating = fourStars
+    }
+    if(business.rating === 4.5) {
+      StarRating = fourHalfStars
+    }
+    if(business.rating === 5) {
+      StarRating = fiveStars
+    }
 
     return (
         <div className="Results-Expanded">
@@ -26,7 +71,7 @@ export function AdventureResultExpanded({business, onAdd, onClose}:MainProp) {
             <h2 className="Expanded-H2">{business.name}</h2>
 
             <div className="Expanded-Result-Content">
-            <p>Rating: {business.rating}</p>
+            <img id="Star-Rating" src={StarRating}/>
             <p>Number of Reviews: {business.review_count}</p>
             <p>Price: {business.price}</p>
             <p>Open Now: {business.is_closed}</p>
