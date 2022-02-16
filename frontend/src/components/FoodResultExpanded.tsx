@@ -31,6 +31,13 @@ export function FoodResultExpanded({business, onAdd, onClose}:MainProp) {
         fetchReviews(business.id).then((data) => setReviews(data.reviews))
     }, []);
 
+    const [disable, setDisable] = useState(false);
+
+    function clickButtonDisable() {
+        onAdd();
+        setDisable(true)
+    }
+
 //This sets conditionals for Star Ratings
 let StarRating = "";
 
@@ -66,32 +73,36 @@ if(business.rating === 5) {
 }
 
     return (
-        <div className="Results-Expanded">
-            <p className="Close"><i className="material-icons" onClick={onClose}>close</i></p>
-            <p className="Expanded-Img"><img src={business.image_url} height={300} width={300}/></p>
-            <h2 className="Expanded-H2">{business.name}</h2>
+      <div className="Results-Expanded">
+      <p className="Close"><i className="material-icons" onClick={onClose} id="X-Modal-Close">close</i></p>
+        <div className="Results-Expanded-Left">
+          <p className="Expanded-Img"><img src={business.image_url} id="Modal-Pic" height={300} width={300}/></p>
+          <h2 className="Expanded-H2">{business.name}</h2>
+          <img id="Star-Rating" src={StarRating}/>
+          <p className="Review-Count">{business.review_count} reviews </p>
+          <p id="Price-Modal">Price: {business.price}</p>
+          <p id="Open-or-Closed">Open Now {business.is_closed}</p>
+          <p id="Phone-Number">Phone: {business.display_phone}</p>
+          <p>Address: {business.location.display_address}</p>
+          <p className="Category-Bullets">Categories: {business.categories.map((category, i) => <li className="Category-Bullets" key={i}> - {category.title}</li> )}</p>
+          </div>
 
-            <div className="Expanded-Result-Content">
-            <img id="Star-Rating" src={StarRating}/>
-            <p>Number of Reviews: {business.review_count}</p>
-            <p>Price: {business.price}</p>
-            <p>Open Now: {business.is_closed}</p>
-            <p>Phone: {business.display_phone}</p>
-            <p>Address: {business.location.display_address}</p>
-            <p>Category: {business.categories.map((category, i) => <li key={i}> {category.title}/</li> )}</p>
-            <p>Reviews: {reviews.map((review, i) => 
-            <li key={i}> 
-             <span className="Rating" id="Star-Rating"> Rating: {review.rating}</span><br/>
-                    <span className="Review-Text">{review.text} </span> 
-                        <span className="Review-Link"> <a href={review.url} target={"_blank"}>See Full Review</a> </span><br/>
-                          <span className="Review-Name">{review.user.name}</span><br/>
-                            <span className="Review-Time">{review.time_created}</span><br/>
-                            </li> )}</p>
-             
-            </div>
-            <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
-            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
-            <p className="Yelp-Logo"><img src="yelp_logo.png" height={22}/></p> 
-        </div>
+          <div className="Reviews">
+          <h1>Reviews:</h1> 
+            {reviews.map((review, i) => 
+          <div className="One-Review" key={i}> 
+              <span className="Rating" id="Star-Rating"> Rating: <span id="Rating-In-Review">{review.rating}</span></span><br/>
+                  <span className="Review-Text">{review.text} </span> 
+                      <span className="Review-Link"> <a href={review.url} target={"_blank"} id="Review-Link">See Full Review</a> </span>
+                          <span className="Review-Time"> <br/>{review.time_created} <br/></span>
+          <a href={business.url} target="_blank"><img src="yelp_logo.png" className="Yelp-Logo"/></a>
+                          </div> )}
+
+                        <div id="Add-Button-Div">
+                          <button id="Add-to-List-Button-Modal" disabled={disable} onClick={clickButtonDisable} >Add to Itinerary</button>
+                          </div>
+
+          </div>   
+</div>
     )
 }
