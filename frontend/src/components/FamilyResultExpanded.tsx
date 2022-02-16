@@ -83,8 +83,9 @@ export function FamilyResultExpanded({business, onAdd, onClose}:MainProp) {
             <li key={i}> 
                 <span className="Rating" id="Star-Rating"> Rating: {review.rating}</span><br/>
                     <span className="Review-Text">{review.text} </span> 
-                        <span className="Review-Link"> <a href={review.url} target={"_blank"}>See Full Review</a> </span>
-                            <span className="Review-Time"> <br/>{review.time_created} <br/></span>
+                        <span className="Review-Link"> <a href={review.url} target={"_blank"}>See Full Review</a> </span><br/>
+                          <span className="Review-Name">{review.user.name}</span><br/>
+                            <span className="Review-Time">{review.time_created}</span><br/>
                             </li> )}</p>
             </div>
             <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
