@@ -95,10 +95,11 @@ if(business.rating === 5) {
             <p>Category: {business.categories.map((category, i) => <li key={i}> {category.title}/</li> )}</p>
             <p>Reviews: {reviews.map((review, i) => 
             <li key={i}> 
-                <span className="Rating" id="Star-Rating"> Rating: {review.rating}</span><br/>
+                  <span className="Rating" id="Star-Rating"> Rating: {review.rating}</span><br/>
                     <span className="Review-Text">{review.text} </span> 
-                        <span className="Review-Link"> <a href={review.url} target={"_blank"}>See Full Review</a> </span>
-                            <span className="Review-Time"> <br/>{review.time_created} <br/></span>
+                        <span className="Review-Link"> <a href={review.url} target={"_blank"}>See Full Review</a> </span><br/>
+                          <span className="Review-Name">{review.user.name}</span><br/>
+                            <span className="Review-Time">{review.time_created}</span><br/>
                             </li> )}</p>
             <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
             </div>
@@ -109,6 +110,8 @@ if(business.rating === 5) {
         :
         <i className="material-icons" id="Add-to-list-Icon" onClick={handleDelete} title="Remove to Itinerary" >playlist_remove</i>
 }             
+<p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+            <p className="Yelp-Logo"><img src="yelp_logo.png" height={22}/></p> 
                 
         </div>
         </div>

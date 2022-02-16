@@ -86,9 +86,11 @@ export function OutdoorResultExpanded({business, onAdd, onClose}:MainProp) {
                         <span className="Review-Link"> <a href={review.url} target={"_blank"}>See Full Review</a> </span>
                             <span className="Review-Time"> <br/>{review.time_created} <br/></span>
                             </li> )}</p>
-            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+           
             </div>
             <button id="Add-to-List-Button" onClick={onAdd} >Add to Itinerary</button>
+            <p><a href={business.url} target="_blank">Link to Yelp</a></p> 
+            <p className="Yelp-Logo"><img src="yelp_logo.png" height={22}/></p> 
         </div>
     )
 }
