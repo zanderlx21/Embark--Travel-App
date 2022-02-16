@@ -7,4 +7,7 @@ export interface ReviewModel {
         text: string;
         time_created: string;
         url: string
+        user: {
+            name: string
+        }
 };
