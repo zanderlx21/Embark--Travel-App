@@ -22,8 +22,7 @@ function OutdoorResultsList({businesses, onAdd, onDelete}:MainProp) {
     return (
 
         <div className='Component-List' id="Outdoor-List">
-            <h1 onClick={toggleDisplay}> Outdoor Activities <i className="material-icons" id="Dropdown-Arrow" onClick={toggleDisplay}  title="Show results" >expand_more</i></h1>
-
+ <h1 onClick={toggleDisplay}> <i className="material-icons" id="Dropdown-Arrow" onClick={toggleDisplay}  title="Show results" >expand_more</i> Outdoor Activities</h1>
         {hidden ? 
         <div className="Component-Map-Div">
         {businesses.map( (business, i) => 
