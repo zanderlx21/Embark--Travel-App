@@ -9,7 +9,7 @@ interface Prop {
 
 function ExtraForm({onSubmit, topSearch}:Prop) {
 
-    const [searchCity, setSearchCity] = useState<string>(topSearch);
+    const [searchCity, setSearchCity] = useState<string>("");
     const [searchCategory, setSearchCategory] = useState<string>("");
     
     function onFormSubmit (e: FormEvent) {

@@ -15,7 +15,21 @@ import AdventureResultsList from './AdventueResultsList';
 import FamilyResultsList from './FamilyResultsList';
 import NightLifeResultsList from './NightLifeResultsList';
 // @ts-ignore
-import videoBG from './video/video-BG.mp4'
+import videoBG1 from './video/AirplaneWing.mp4'
+// @ts-ignore
+import videoBG2 from './video/BallonsVan.mp4'
+// @ts-ignore
+import videoBG3 from './video/Balloons.mp4'
+// @ts-ignore
+import videoBG4 from './video/BeachAriel.mp4'
+// @ts-ignore
+import videoBG5 from './video/BeachHover.mp4'
+// @ts-ignore
+import videoBG6 from './video/BeachMountain.mp4'
+// @ts-ignore
+import videoBG7 from './video/BeachMountain2.mp4'
+// @ts-ignore
+import videoBG8 from './video/BeachWalk.mp4'
 //
 import IndoorResultsList from './IndoorResultsList';
 import { ItineraryList } from './ItineraryList';
@@ -41,30 +55,37 @@ function Main() {
     const[ nightLifeList, setNightLifeList ] = useState<Business[]>([]);
     const [ itineraryItems, setItineraryItems ] = useState<Business[]>([]);
     const [ refresh, setRefresh ] = useState(false)
+    const [ display, setDisplay ] = useState(false)
 
     useEffect( () => {
-        if(searchTerm) 
+        
         fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
-        if(searchTerm)  
+         
         fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
-        if(searchTerm) 
+        
         fetchIndoor(searchTerm).then((data) => setIndoorList(data.businesses)) 
-        if(searchTerm) 
+        
         fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses))
-        if(searchTerm) 
+        
         fetchFitness(searchTerm).then((data) => setFitnessList(data.businesses))
-        if(searchTerm) 
+        
         fetchRelaxation(searchTerm).then((data) => setRelaxationList(data.businesses))
-        if(searchTerm) 
+        
         fetchAdventure(searchTerm).then((data) => setAdventureList(data.businesses))
-        if(searchTerm) 
+        
         fetchFamily(searchTerm).then((data) => setFamilyList(data.businesses))
-        if(searchTerm) 
+        
         fetchNightlife(searchTerm).then((data) => setNightLifeList(data.businesses))
     }, [searchTerm]);
             
     const handleSubmitForm = (searchTerm: string) => {
         setSearchTerm(searchTerm)
+
+        // if (display){
+        //     setDisplay(true)
+        // } else {
+        //     setDisplay(false)
+        // }
     }
 
     function addToItinerary(business: Business){
@@ -103,11 +124,24 @@ function Main() {
         setSearchCategory(searchCategory);
         
     }
-  
+
+    let videosArray = [
+        videoBG1,
+        videoBG2,
+        videoBG3,
+        videoBG4,
+        videoBG5,
+        videoBG6,
+        videoBG7,
+        videoBG8,
+    ]
+
+    let index = Math.floor(Math.random() * videosArray.length)
+    let chosenVideo = videosArray[index]
     return (
         <div className="Main">
             <video autoPlay loop muted>
-                <source src={videoBG} type="video/mp4" />
+                <source src={chosenVideo} type="video/mp4" />
             </video> 
 
             <Header refresh={refresh}/>
