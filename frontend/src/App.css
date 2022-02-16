@@ -156,6 +156,10 @@ padding-left: 100px;
     color:rgb(3, 23, 59)
 }
 
+#Review-Number-inList {
+  
+}
+
 #Trash-Can {
 float: right;
 }
@@ -388,6 +392,19 @@ video{
     to {
       height: 87vh
     }
+  }
+
+  .Component-Map-Div-Extra {
+    /* border: 5px solid green; */
+    height: fit-content;
+    /* cursor: grab; */
+    overflow-y: hidden;
+    overflow-x: auto;
+    display: flex;
+    /* flex-grow: ;
+    flex-basis: 25%; */
+    align-items:flex-start;
+    animation: expand 800ms calc(1) cubic-bezier(0.42, 0, 0.58, 1);
   }
   
   .Component-List:active,
@@ -629,7 +646,7 @@ animation: pulse 3s infinite
   text-align: right;
 }
 /* ----------------------------------------760 SCREEN VIEW BELOW */
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 700px) {
     #Itinerary-Slider {
         font-size: 3.5rem;
         position: fixed;
