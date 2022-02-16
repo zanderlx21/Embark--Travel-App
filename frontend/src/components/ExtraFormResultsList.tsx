@@ -14,7 +14,7 @@ export function ExtraFormResultsList({businesses, onAdd, onDelete}:MainProp) {
         <div className='Component-List' id="Food-List">
             <h2></h2>
 
-        <div className="Component-Map-Div">
+        <div className="Component-Map-Div-Extra">
         {businesses.map( (business, i) => 
         <ExtraFormResult key={i} business={business} onAdd={()=>onAdd(business)} onDelete={()=>onDelete(business)}  />)} 
         </div>
