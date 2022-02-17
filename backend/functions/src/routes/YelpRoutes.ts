@@ -16,7 +16,7 @@ yelpRoutes.get("/search", async (req, res) => {
 
         if (category === "hotels") {
             let fetch_response1 = await fetch(api_url + "&categories=hotels&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
 
             let json1 = await fetch_response1.json();
@@ -26,7 +26,7 @@ yelpRoutes.get("/search", async (req, res) => {
 
         if (category === "food") {
             let fetch_response2 = await fetch(api_url + "&categories=food&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
 
             let json2 = await fetch_response2.json();
@@ -36,7 +36,7 @@ yelpRoutes.get("/search", async (req, res) => {
 
         if (category === "museums,aquariums,galleries") {
             let fetch_response3 = await fetch(api_url + "&categories=museums,aquariums,galleries&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
     
             let json3 = await fetch_response3.json();
@@ -45,7 +45,7 @@ yelpRoutes.get("/search", async (req, res) => {
         }
         if (category === "parks,zoos,beaches,boating,discgolf,fishing,paddleboarding,gardens,castles,boatcharters,bikerentals") {
             let fetch_response4 = await fetch(api_url + "&categories=parks,zoos,beaches,boating,discgolf,fishing,paddleboarding,gardens,castles,boatcharters,bikerentals&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
         
             let json4 = await fetch_response4.json();
@@ -54,7 +54,7 @@ yelpRoutes.get("/search", async (req, res) => {
         }
         if (category === "fitness,yoga,gyms,meditationcenters") {
             let fetch_response5 = await fetch(api_url + "&categories=fitness,yoga,gyms,meditationcenters&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
         
             let json5 = await fetch_response5.json();
@@ -63,7 +63,7 @@ yelpRoutes.get("/search", async (req, res) => {
         }
         if (category === "spa,massage,hotsprings") {
             let fetch_response6 = await fetch(api_url + "&categories=spa,massage,hotsprings&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
         
             let json6 = await fetch_response6.json();
@@ -72,7 +72,7 @@ yelpRoutes.get("/search", async (req, res) => {
         }
         if (category === "hiking,canyoneering,climbing,hot_air_balloons,mountainbiking,paragliding,parasailing,rafting,rock_climbing,skydiving,zipline,snorkeling,surfing,tubing,jetskis,atvrentals,skiing") {
             let fetch_response7 = await fetch(api_url + "&categories=hiking,canyoneering,climbing,hot_air_balloons,mountainbiking,paragliding,parasailing,rafting,rock_climbing,skydiving,zipline,snorkeling,surfing,tubing,jetskis,atvrentals,skiing&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
         
             let json7 = await fetch_response7.json();
@@ -82,7 +82,7 @@ yelpRoutes.get("/search", async (req, res) => {
 
         if (category === "indoor_playcenter,kids_activities,lasertag,mini_golf,playgrounds,scavengerhunts,swimmingpools,trampoline,waterparks,zipline,bikerentals,virtualrealitycenters,amusementparks,escapegames") {
             let fetch_response8 = await fetch(api_url + "&categories=indoor_playcenter,kids_activities,lasertag,mini_golf,playgrounds,scavengerhunts,swimmingpools,trampoline,waterparks,zipline,bikerentals,virtualrealitycenters,amusementparks,escapegames&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
         
             let json8 = await fetch_response8.json();
@@ -91,7 +91,7 @@ yelpRoutes.get("/search", async (req, res) => {
         }
         if (category === "bars,musicvenues,theater,lounges,barcrawl,beergardens,karaoke,pianobars,poolhalls,casinos,jazzandblues") {
             let fetch_response9 = await fetch(api_url + "&categories=bars,musicvenues,theater,lounges,barcrawl,beergardens,karaoke,pianobars,poolhalls,casinos,jazzandblues&rating=4", {
-                headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
             });
         
             let json9 = await fetch_response9.json();
@@ -116,7 +116,7 @@ yelpRoutes.get("/usersearch", async (req, res) => {
             const api_url = `https://api.yelp.com/v3/businesses/search?location=${location}`;
 
             let fetch_response10 = await fetch(api_url + "&categories=" + category + "&rating=4", {
-                    headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+                    headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
                 });
                 let json10 = await fetch_response10.json();
                 console.log(fetch_response10)
@@ -140,7 +140,7 @@ yelpRoutes.get("/reviews/:id", async (req, res) => {
         const api_url = `https://api.yelp.com/v3/businesses/${id}/reviews`;
         
         let fetch_response12 = await fetch(api_url, {
-            headers: { 'Authorization': `Bearer QyWd6Rce5pLg83TEL20FxoVv8QF4MyQ6BHntGahHQ9LnOlsN1rJQ0V0Y5Z36Qw9FFKqH-qh_wGiS48rLJCElWhjLgt-4WrEOqVEWcNoUjL42pO8FyVonpSlsITr8YXYx` }
+            headers: { 'Authorization': `Bearer t5HwxxfxaWADS_AHoGrScK5Q_EpqRgvY5W1AsspOQvVOLdc12mGxgSipJaO_BjGRdZ_XrajLJ4ra2q6MuagMS1smD1UewS4op6Fky29rUj-BV_0t5ucijocorTf8YXYx` }
         });
         
         let json12 = await fetch_response12.json();

@@ -69,7 +69,7 @@ export function ItineraryItem({business, onDelete}:Props) {
             <p>Open Now: {business.is_closed}</p> 
             <p>Phone: {business.display_phone}</p>
             <p>Address: {business.location.display_address}</p>
-            <p><a href={business.url} target="_blank">Link to Yelp</a></p>
+            <a href={business.url} target="_blank"><img src="yelp_logo.png" className="Yelp-Logo"/></a>
 
             </div>
             </div>

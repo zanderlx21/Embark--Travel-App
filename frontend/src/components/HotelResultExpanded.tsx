@@ -79,15 +79,15 @@ export function HotelResultExpanded({business, onAdd, onClose}:MainProp) {
         <div className="Results-Expanded">
         <p className="Close"><i className="material-icons" onClick={onClose} id="X-Modal-Close">close</i></p>
           <div className="Results-Expanded-Left">
-            <p className="Expanded-Img"><img src={business.image_url} id="Modal-Pic" height={300} width={300}/></p>
+          <a href={business.url} className="Expanded-Img"><img src={business.image_url} id="Modal-Pic" height={300} width={300}/></a>
             <h2 className="Expanded-H2">{business.name}</h2>
             <img id="Star-Rating" src={StarRating}/>
             <p className="Review-Count">{business.review_count} reviews </p>
             <p id="Price-Modal">Price: {business.price}</p>
             <p id="Open-or-Closed">Open Now {business.is_closed}</p>
-            <p id="Phone-Number">Phone: {business.display_phone}</p>
-            <p>Address: {business.location.display_address}</p>
-            <p className="Category-Bullets">Categories: {business.categories.map((category, i) => <li className="Category-Bullets" key={i}> - {category.title}</li> )}</p>
+            <p className="Bold-This"><span>Phone:</span> {business.display_phone}</p>
+            <p className="Bold-This"><span>Address:</span> {business.location.display_address}</p>
+            <p className="Bold-This"><span>Categories:</span> {business.categories.map((category, i) => <li className="Category-Bullets" key={i}> - {category.title}</li> )}</p>
             </div>
 
             <div className="Reviews">

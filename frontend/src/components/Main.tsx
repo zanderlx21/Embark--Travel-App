@@ -43,7 +43,7 @@ export interface SearchTermProp {
 }
 
 function Main() {
-    const [searchTerm, setSearchTerm] = useState<string>('Detroit');
+    const [searchTerm, setSearchTerm] = useState<string>("Detroit");
     const[ foodList, setFoodList ] = useState<Business[]>([]);
     const[ hotelList, setHotelList ] = useState<Business[]>([]);
     const[ indoorList, setIndoorList ] = useState<Business[]>([]);
@@ -58,15 +58,24 @@ function Main() {
     const [ display, setDisplay ] = useState(false)
 
     useEffect( () => {
-        fetchHotels(searchTerm).then((data) => setHotelList(data.businesses))
-        fetchFood(searchTerm).then((data) => setFoodList(data.businesses))
-        fetchIndoor(searchTerm).then((data) => setIndoorList(data.businesses)) 
-        fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses))
-        fetchFitness(searchTerm).then((data) => setFitnessList(data.businesses))
-        fetchRelaxation(searchTerm).then((data) => setRelaxationList(data.businesses))
-        fetchAdventure(searchTerm).then((data) => setAdventureList(data.businesses))
-        fetchFamily(searchTerm).then((data) => setFamilyList(data.businesses))
-        fetchNightlife(searchTerm).then((data) => setNightLifeList(data.businesses))
+        if(searchTerm)
+        fetchHotels(searchTerm).then((data) => setHotelList(data.businesses));
+        if(searchTerm)
+        fetchFood(searchTerm).then((data) => setFoodList(data.businesses));
+        if(searchTerm)
+        fetchIndoor(searchTerm).then((data) => setIndoorList(data.businesses));
+        if(searchTerm)
+        fetchOutdoor(searchTerm).then((data) => setOutdoorList(data.businesses));
+        if(searchTerm)
+        fetchFitness(searchTerm).then((data) => setFitnessList(data.businesses));
+        if(searchTerm)
+        fetchRelaxation(searchTerm).then((data) => setRelaxationList(data.businesses));
+        if(searchTerm)
+        fetchAdventure(searchTerm).then((data) => setAdventureList(data.businesses));
+        if(searchTerm)
+        fetchFamily(searchTerm).then((data) => setFamilyList(data.businesses));
+        if(searchTerm)
+        fetchNightlife(searchTerm).then((data) => setNightLifeList(data.businesses));
     }, [searchTerm]);
             
     const handleSubmitForm = (searchTerm: string) => {
@@ -123,7 +132,7 @@ function Main() {
         videoBG4,
         videoBG5,
         videoBG6,
-        videoBG7,
+        // videoBG7,
         videoBG8,
     ]
 
