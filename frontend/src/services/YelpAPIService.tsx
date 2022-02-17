@@ -2,7 +2,7 @@ import axios from "axios";
 import { Business, YelpModel } from "../models/YelpModel";
 import { ReviewModel, Reviews } from "../models/ReviewModel";
 
-const baseUrl = "http://localhost:5001/travelapp-f2d81/us-central1/api/search";
+const baseUrl = "https://us-central1-travelapp-f2d81.cloudfunctions.net/api/search";
 
 export const fetchFood = (query: string):Promise<YelpModel> => {
     return axios
@@ -91,14 +91,14 @@ export const fetchNightlife = (query: string):Promise<YelpModel> => {
 export const fetchReviews = (id:string):Promise<Reviews> => {
 
   return axios
-    .get<Reviews>((`http://localhost:5001/travelapp-f2d81/us-central1/api/reviews/${id}`), {
+    .get<Reviews>((`https://us-central1-travelapp-f2d81.cloudfunctions.net/api/reviews/${id}`), {
     })
     .then( res => res.data)
 }
 
 
 // EXTRA FORM for user entry at bottom of page, location already set by user, params = user entry
-const baseUrlSetLocation = "http://localhost:5001/travelapp-f2d81/us-central1/api/usersearch"
+const baseUrlSetLocation = "https://us-central1-travelapp-f2d81.cloudfunctions.net/api/usersearch"
 
 export const fetchCategory = (query: string, query2: string):Promise<YelpModel> => {
   return axios
