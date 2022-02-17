@@ -68,7 +68,7 @@ export function OutdoorResultExpanded({business, onAdd, onClose}:MainProp) {
     return (
         <div className="Results-Expanded">
             <p className="Close"><i className="material-icons" onClick={onClose}>close</i></p>
-            <p className="Expanded-Img"><img src={business.image_url} height={300} width={300}/></p>
+            <a href={business.url} className="Expanded-Img"><img src={business.image_url} id="Modal-Pic" height={300} width={300}/></a>
             <h2 className="Expanded-H2">{business.name}</h2>
 
             <div className="Expanded-Result-Content">
